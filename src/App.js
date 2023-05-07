@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import SelectComponent from "./Components/Charts/SelectComponent";
+import CurrencyConverter from "./Components/Exchange/CurrencyConverter";
+import Search from "./Components/Search/Search";
+import TimeSeries,{} from "./Components/Sidebar/TimeSeries";
+import CoinCurrency from "./Components/Currency/CoinCurrency";
+import PieChart from "./Components/PieChart/PieChart";
 
 function App() {
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="main-container flex mx-3">
+      
+        <div>
+            <div>
+              <div className="flex  border m-3">
+                  <CoinCurrency/>
+                  <div className="m-3 mx-12">
+                    <Search/>
+                  </div>
+              </div> 
+
+              <div className="border m-3">
+                  <SelectComponent/>
+              </div>
+            </div>
+            
+            
+            <div className="flex border m-3">
+              <PieChart/>
+              <CurrencyConverter/>
+            </div>
+        </div>
+        <div className="border my-3">
+            <TimeSeries/>
+        </div>
+      </div>
+  
+         
   );
 }
 
