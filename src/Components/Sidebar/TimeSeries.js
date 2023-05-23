@@ -25,35 +25,33 @@ axios.get(url).then(response=>{
 },[cur])
 
 
-const coinsList = coins.map((coin,index)=><li className='border-b-2 border-gray-100' key={index}><Coin key={coin.id} 
-                                                     image={coin.image}
+const coinsList = coins.map((coin,index)=><li className='border-b-2 bg-white' key={index}><Coin key={coin.id} 
+                                                     
                                                      name={coin.name}
-                                                     symbol={coin.symbol}
-                                                     price={coin.current_price}
+                                                     
                                                      volume={coin.market_cap}
                                                      change = {coin.price_change_percentage_24h}
                                                 /></li>)
 
-    return (
-    <div>
-        <div className='main-sidebar'>
-            <div>
-            </div>
+    return(
+        <div className=''>
+            <div className='main-sidebar scroll-mb-24 h-96 ... text-clip overflow-scroll'>
+                
+                <div className='mx-10 my-6 font-medium'> 
+                    <h1> Cryptocurrency by<br /> market cap</h1>
+                </div>
+                <div id="pie-chart" className='max-w-fit'>
 
-            <div id="pie-chart" className='max-w-fit'>
-
-
-            </div>
-
-            <ul className='flex flex-col'>
-                <li></li>
-                {coinsList}
-            </ul>
+                </div>
+                <ul>
+                    <li>
+                        {coinsList}
+                    </li>
+                </ul>
 
             </div>
         </div>
-    
-  )
+    )
 }
 
 export default TimeSeries
