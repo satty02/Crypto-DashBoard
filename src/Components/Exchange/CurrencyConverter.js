@@ -7,7 +7,6 @@ import { resultAmountAction } from '../../State/Action/resultAmountAction';
 import { chosenPrimaryAction } from '../../State/Action/chosePrimaryAction';
 import { chosenSecondaryAction } from '../../State/Action/choseSecondaryAction';
 import { amountQuantityAction } from '../../State/Action';
-import CoinCurrency from '../Currency/CoinCurrency';
 
 function CurrencyConverter() { // create Array to use in select option
 
@@ -27,13 +26,7 @@ function CurrencyConverter() { // create Array to use in select option
     
     const dispatch = useDispatch()
 
-useEffect(()=>{
-        axios.get("https://api.coingecko.com/api/v3/exchange_rates").then(function (response) {
-            dispatch(coinExchangeAction(response.data.rates));
-        }).catch(function (error) {
-            console.error(error);
-        });
-    },[])
+
     
     const listExchangeCoins = []
 

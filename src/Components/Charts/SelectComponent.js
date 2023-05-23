@@ -13,7 +13,6 @@ function SelectComponent() {
     const selectedCoins2 = useSelector(state=>state.coinSelect2);
     const selectedChart = useSelector(state =>state.chartSelect)
 
-    console.log(selectedCoins2)
 
     // importing use dispatch 
     const dispatch = useDispatch();
@@ -29,9 +28,9 @@ function SelectComponent() {
         dispatch(coinSelectionAction(e.target.value))
     }
 
-    const onChange2 = (e)=>{
-        dispatch(coinSelectionAction2(e.target.value))
-    }
+    // const onChange2 = (e)=>{
+    //     dispatch(coinSelectionAction2(e.target.value))
+    // }
     
     // method for dispatching selected dates 
     const onClick1 =(e)=>{
@@ -59,9 +58,9 @@ function SelectComponent() {
                 <select name={selectedCoins} className='object-contain w-13 h-8 ' value={selectedCoins} onChange={onChange}>
                     {coinsId.map((coin,index)=><option key={index}>{coin}</option>)}
                 </select>
-                <select name={selectedCoins2} className='object-contain w-13 h-8 ' value={selectedCoins2} onChange={onChange2}>
+                {/* <select name={selectedCoins2} className='object-contain w-13 h-8 ' value={selectedCoins2} onChange={onChange2}>
                     {coinsId.map((coin,index)=><option key={index}>{coin}</option>)}
-                </select>       
+                </select>        */}
             </div>
             
             

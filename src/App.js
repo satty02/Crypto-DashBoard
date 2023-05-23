@@ -2,15 +2,16 @@ import SelectComponent from "./Components/Charts/SelectComponent";
 import CurrencyConverter from "./Components/Exchange/CurrencyConverter";
 import Search from "./Components/Search/Search";
 import TimeSeries,{} from "./Components/Sidebar/TimeSeries";
-import CoinCurrency from "./Components/Currency/CoinCurrency";
+import CoinCurrency from "./Components/baseCurrency/CoinCurrency";
 import PieChart from "./Components/PieChart/PieChart";
+import FetchData from "./APIdata/FetchData";
 
 function App() {
 
   
 
   return (
-    <div className="main-container flex mx-3">
+    <div className="main-container flex mx-3 bg-gray-200">
       
         <div>
             <div>
@@ -34,6 +35,9 @@ function App() {
         </div>
         <div className="border my-3">
             <TimeSeries/>
+        </div>
+        <div>
+          <FetchData/>
         </div>
       </div>
   

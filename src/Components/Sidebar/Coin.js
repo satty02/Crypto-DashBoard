@@ -8,7 +8,6 @@ function Coin({image,name,symbol,price,volume,change}) {
   let bottom =  <div class="h-0 w-0 border-x-8 border-x-transparent border-t-[16px] border-t-red-600"></div>
   let top = <div class="h-0 w-0 border-x-8 border-x-transparent border-b-[16px] border-b-green-600"></div>
 
-  console.log(cur)
 
   return (
     // container for list of coins
@@ -16,7 +15,7 @@ function Coin({image,name,symbol,price,volume,change}) {
         <div className='align-middle'>
           {/* NAME , IMAGE,  & SYMBOL IN THIS CONTAINER */}
             <div className='sm:pl-4 pr-8 flex sm:items-center'>
-              
+              ////
               {/* below data will be fetched via API */}
                 <img src={image} alt="crypto" className='object-contain h-5 w-5 align-middle m-1'></img>
                 
