@@ -2,15 +2,17 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { coinsCurrencyAction } from '../../State/Action/coinsCurrencyAction';
 
-function CoinCurrency() {
+function BaseCurrency() {
+  // selecting base Currency state to use in value of select element
   const baseCurrency = useSelector(state=>state.CoinCurrency);
   const dispatch = useDispatch();
 
 
   return (
-    <>
     <div className='m-1 max-w-fit max-h-fit font-semibold border z-10 hover::shadow-outline' >
-        <select id="currency"
+      hello
+        <select id="currency" data-testId='select' name='currency'
+                // dispatching the selected state into base currency action  
                  onChange={(e)=>dispatch(coinsCurrencyAction(e.target.value))} 
                  value={baseCurrency} 
                  className="currency-select
@@ -24,19 +26,13 @@ function CoinCurrency() {
                             p-2.5
                             " 
                             >
-          <option value="inr" className='font-semibold'>INR</option>
-          <option value="usd" className='font-semibold'>USD</option>
-          <option value="eur" className='font-semibold'>EURO</option>
-          <option value="jpy" className='font-semibold'>YEN(JAP)</option>
+          <option value="inr" data-testId='select-option' className='font-semibold'>INR</option>
+          <option value="usd" data-testId='select-option' className='font-semibold'>USD</option>
+          <option value="eur" data-testId='select-option' className='font-semibold'>EURO</option>
+          <option value="jpy" data-testId='select-option' className='font-semibold'>YEN</option>
         </select>
     </div>
-
-    
-
-
-    </>
-
   )
 }
 
-export default CoinCurrency
+export default BaseCurrency

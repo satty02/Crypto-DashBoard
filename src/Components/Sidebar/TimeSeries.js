@@ -1,9 +1,6 @@
 import React from 'react';
-import { useState,useEffect } from 'react';
 import Coin from './Coin';
-import { useDispatch, useSelector } from 'react-redux';
-import { coinsListActions } from '../../State/Action/index';
-import axios from 'axios';
+import {useSelector } from 'react-redux';
 
 function TimeSeries() {
 
@@ -24,7 +21,7 @@ const coinsList = coins.map((coin,index)=><li className='border-b-2 bg-white' ke
 
     return(
         <div className=''>
-            <div className='main-sidebar scroll-mb-24 h-96 ... text-clip overflow-scroll'>
+            <div className='main-sidebar scroll-mb-24 h-screen ... text-clip overflow-scroll'>
                 
                 <div className='mx-10 my-6 font-medium'> 
                     <h1> Cryptocurrency by<br /> market cap</h1>
@@ -33,9 +30,7 @@ const coinsList = coins.map((coin,index)=><li className='border-b-2 bg-white' ke
 
                 </div>
                 <ul>
-                    <li>
-                        {coinsList}
-                    </li>
+                             {coinsList}
                 </ul>
 
             </div>

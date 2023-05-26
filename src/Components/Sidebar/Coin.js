@@ -14,13 +14,8 @@ function Coin({image,name,symbol,price,volume,change}) {
     <div className='mx-auto  w-full max-w-fit bg-white font-sans'>
         <div className='align-middle'>
           {/* NAME , IMAGE,  & SYMBOL IN THIS CONTAINER */}
-<<<<<<< HEAD
-            <div className='sm:pl-4 pr-8 flex sm:items-center'>
-              ////
-=======
             <div className='sm:pl-4 pr-4 flex sm:items-left'>
               
->>>>>>> 1591b75a535876d2d6fb5fe1c4556172ed0c9bfa
               {/* below data will be fetched via API */}
                
                 
@@ -32,13 +27,13 @@ function Coin({image,name,symbol,price,volume,change}) {
                      {/* PRICE & VOLUME IN THIS CONTAINER */}
 
                              
-                <p className='coin-price px-5 text-inherit text-sm flex'>
+                <div className='coin-price px-5 text-inherit text-sm flex'>
 
                   <div className='pt-5 p-3'>{change<0?bottom:top}</div>
 
                    <div className='px-1 p-3'>{change.toFixed(2)}%</div> 
 
-                   </p>              
+                   </div>              
 
                 {/* to avoid comma */}
                 

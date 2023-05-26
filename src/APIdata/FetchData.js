@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { coinsListActions } from '../State/Action';
 import { coinExchangeAction } from '../State/Action/coinExchangeAction';
 import { chartDataAction } from '../State/Action/chartDataAction';
+import BaseCurrency from '../Components/BaseCurrency/BaseCurrency';
 
 function FetchData() {
 
@@ -50,9 +51,9 @@ function FetchData() {
     },[baseCurrency,chartDataList])
 
   return (
-    <div>
-        fetch data
-    </div>
+    
+        <BaseCurrency/>
+    
   )
     
   

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
 import ExchangeCoins from './ExchangeCoins';
 import { useDispatch, useSelector } from 'react-redux';
 import { coinExchangeAction } from '../../State/Action/coinExchangeAction';
