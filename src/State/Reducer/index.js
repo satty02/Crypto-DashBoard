@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import {coinsListReducer} from "../Reducer/coinsListReducer";
 import { coinsChartReducer } from "./coinsChartReducer";
-import { coinsCurrencyReducer } from "./coinsCurrencyReducer";
+import { BaseCurrencyReducer } from "./BaseCurrencyReducer";
 import { CoinsdateReducer } from "./coinsDateReducer";
 import { coinSelectionReducer } from "./CoinSelectionReducer";
 import { chartSelectionReducer } from "./chartSelectionReducer";
@@ -16,7 +16,7 @@ import { coinSelectionReducer2 } from "./coinSelectionReducer2";
 import { chartDataReducer2 } from "./chartDataReducer2";
 
 const rootReducer = combineReducers({
-    CoinCurrency : coinsCurrencyReducer,
+    BaseCurrency : BaseCurrencyReducer,
     coinsData: coinsListReducer,
     coinsName: coinsChartReducer,
     coinsDate: CoinsdateReducer,

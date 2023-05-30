@@ -1,6 +1,6 @@
 import {coinsListActions} from "./coinsListActions";
 import { selectCoins } from "./coinsChartActions";
-import { coinsCurrencyAction } from "./coinsCurrencyAction";
+import { BaseCurrencyAction } from "./BaseCurrencyAction";
 import { CoinDatesAction } from "./CoinDatesAction";
 import { coinSelectionAction } from "./CoinSelectionAction";
 import { chartSelectionAction } from "./chartSelectionAction";
@@ -15,7 +15,7 @@ import { chartDataAction2 } from "./chartDataAction2";
 export {
     coinsListActions,
     selectCoins,
-    coinsCurrencyAction,
+    BaseCurrencyAction,
     CoinDatesAction,
     coinSelectionAction,
     chartSelectionAction,

@@ -1,9 +1,9 @@
 import SelectComponent from "./Components/Charts/SelectComponent";
 import CurrencyConverter from "./Components/Exchange/CurrencyConverter";
 import Search from "./Components/Search/Search";
-import TimeSeries,{} from "./Components/Sidebar/TimeSeries";
 import PieChart from "./Components/PieChart/PieChart";
 import FetchData from "./APIdata/FetchData";
+import CoinListAPI from "./Components/Sidebar/CoinListAPI";
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
             </div>
         </div>
         <div className="flex-wrap border my-3 rounded-md bg-white  ">
-            <TimeSeries/>
+            <CoinListAPI/>
         </div>
         
       </div>

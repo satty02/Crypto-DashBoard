@@ -1,19 +1,20 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { coinsCurrencyAction } from '../../State/Action/coinsCurrencyAction';
+import { BaseCurrencyAction } from '../../State/Action/BaseCurrencyAction';
 
 function BaseCurrency() {
   // selecting base Currency state to use in value of select element
-  const baseCurrency = useSelector(state=>state.CoinCurrency);
+  const baseCurrency = useSelector(state=>state.BaseCurrency);
+
+  // calling the useDispatch funtion into dispatch variable
   const dispatch = useDispatch();
 
 
   return (
     <div className='m-1 max-w-fit max-h-fit font-semibold border z-10 hover::shadow-outline' >
-      hello
-        <select id="currency" data-testId='select' name='currency'
+              <select id="currency" data-testId='select' name='currency'
                 // dispatching the selected state into base currency action  
-                 onChange={(e)=>dispatch(coinsCurrencyAction(e.target.value))} 
+                 onChange={(e)=>dispatch(BaseCurrencyAction(e.target.value))} 
                  value={baseCurrency} 
                  className="currency-select
                             bg-white

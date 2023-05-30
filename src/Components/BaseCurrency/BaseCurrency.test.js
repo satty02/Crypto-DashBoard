@@ -3,7 +3,8 @@ import {fireEvent, render,screen} from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import BaseCurrency from './BaseCurrency';
-import {coinsCurrencyAction} from '../../State/Action/coinsCurrencyAction'
+import {BaseCurrencyAction} from '../../State/Action/BaseCurrencyAction'
+
 
 it('render base currency with redux store',()=>{
     const initialState = '';
@@ -31,11 +32,11 @@ it('on changing dispatched my action',()=>{
     </Provider>
     )
 
-    const selectElement = getByRole('combobox');
+    const selectElement = screen.getByRole('combobox');
     fireEvent.change(selectElement,{target:{value:'usd'}});
 
     const actions = store.getActions();
-    expect(actions).toContainEqual(coinsCurrencyAction('usd'))
+    expect(actions).toContainEqual(BaseCurrencyAction('usd'))
 })
 
 it('simulate options',()=>{
@@ -50,10 +51,10 @@ it('simulate options',()=>{
     </Provider>
     )
 
-    const selectElement = getByTestId('select')
+    const selectElement = screen.getByTestId('select')
     fireEvent.change(selectElement,{target:{value:'usd'}});
 
-    let options = getAllByTestId('select-option');
+    let options = screen.getAllByTestId('select-option');
 
     expect(options[0].selected).toBeFalsy();
     expect(options[1].selected).toBeTruthy();

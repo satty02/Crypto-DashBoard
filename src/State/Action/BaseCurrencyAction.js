@@ -1,10 +1,10 @@
 import { CURRENCY_TYPE } from "./actionTypes";
 
-const coinsCurrencyAction = (type)=>{
+const BaseCurrencyAction = (type)=>{
     return{
         type: CURRENCY_TYPE,
         payload: type,
     }
 }
 
-export {coinsCurrencyAction};
+export {BaseCurrencyAction};

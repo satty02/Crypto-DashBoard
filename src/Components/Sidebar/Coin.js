@@ -1,9 +1,6 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 
 function Coin({image,name,symbol,price,volume,change}) {
-
-  const cur = useSelector(state=>state.CoinCurrency)
 
   let bottom =  <div class="h-0 w-0 border-x-8 border-x-transparent border-t-[8px]  border-t-red-600"></div>
   let top = <div class="h-0 w-0 border-x-8 border-x-transparent border-b-[8px]  border-b-green-600"></div>

@@ -2,7 +2,7 @@ import React from 'react';
 import Coin from './Coin';
 import {useSelector } from 'react-redux';
 
-function TimeSeries() {
+function Sidebar() {
 
 
     
@@ -38,4 +38,4 @@ const coinsList = coins.map((coin,index)=><li className='border-b-2 bg-white' ke
     )
 }
 
-export default TimeSeries
+export default Sidebar;
