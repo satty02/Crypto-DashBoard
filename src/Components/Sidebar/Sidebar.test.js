@@ -1,20 +1,14 @@
+import React from "react";
+import {render, waitFor} from '@testing-library/react';
+import { Provider } from "react-redux";
+import configureMockStore from 'redux-mock-store';
+import thunk from "redux-thunk";
 
-import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
-import CoinListAPI from './CoinListAPI';
-import Sidebar from './Sidebar';
-import Coin from './Coin';
+import CoinListAPI from "./CoinListAPI";
+import { coinsListActions } from "../../State/Action"; 
 
-it(`renders the CoinListAPI with redux store`,()=>{
-    const initialState = '';
-    const mockStore = configureStore();
-    const store = mockStore(initialState);
+const mockStore = configureMockStore([thunk]);
 
-
-    const {coinListAPI,Sidebar,Coin} = render(
-        <Provider store={store}>
-            <CoinListAPI />
-        </Provider>
-    )
+describe('MyAsyncComponent', ()=>{
+    it(`should render user data after successfull API call`)
 })
