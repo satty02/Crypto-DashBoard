@@ -7,13 +7,13 @@ import CoinListAPI from "./Components/Sidebar/CoinListAPI";
 
 function App() {
   return (
-    <div className="main-container flex mx-3 bg-slate-50">
+    <div className="main-container flex mx-3 bg-slate-300">
       
         <div>
             <div>
-              <div className="flex  border m-3 bg-white">
+              <div className="flex m-3 h-10 bg-white">
                   <FetchData/>
-                  <div className="m-3 mx-12">
+                  <div className=" px-11 h-10">
                     <Search/>
                   </div>
               </div> 
