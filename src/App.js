@@ -11,7 +11,7 @@ function App() {
       
         <div>
             <div>
-              <div className="flex m-3 h-10 bg-white">
+              <div className="flex m-3 h-10">
                   <FetchData/>
                   <div className=" px-11 h-10">
                     <Search/>
@@ -24,9 +24,13 @@ function App() {
             </div>
             
             
-            <div className="flex border m-3 bg-white">
+            <div className="flex" >
+            <div className="flex-none w-72 ... border m-3 bg-white">
               <PieChart/>
-              <CurrencyConverter/>
+            </div>
+            <div className="flex-initial border m-3 bg-white" >
+            <CurrencyConverter/>
+            </div>
             </div>
         </div>
         <div className="flex-wrap border my-3 rounded-md bg-white  ">

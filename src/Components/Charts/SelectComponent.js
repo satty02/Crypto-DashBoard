@@ -42,14 +42,14 @@ function SelectComponent() {
     }
 
 
-  return (
-    <div className='main-container border '>
+  return ( 
+    <div className='main-container border rounded-lg'>
         <div className='flex'>
                         
-            <input type='button' onClick={onClick1} name='1d' value='1' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
-            <input type='button' onClick={onClick1} name='1d' value='7' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
-            <input type='button' onClick={onClick1} name='1d' value='30' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
-            <input type='button' onClick={onClick1} name='1d' value='365' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
+            <input type='button' onClick={onClick1} name='1d' value='D' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
+            <input type='button' onClick={onClick1} name='1d' value='1W' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
+            <input type='button' onClick={onClick1} name='1d' value='1M' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
+            <input type='button' onClick={onClick1} name='1d' value='1Y' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
             <input type='button' onClick={onClick1} name='1d' value='max' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
             
             <div className='flex-wrap'>
