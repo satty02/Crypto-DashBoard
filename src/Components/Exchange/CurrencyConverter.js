@@ -62,7 +62,7 @@ function CurrencyConverter() { // create Array to use in select option
     
     
     return (
-        <div className='currency-converter p-4 border max-w-md m-8'>
+        <div className='currency-converter border max-w-md m-3'>
             <h1>
                 Exchange Coins</h1>
             <table className='table-auto'>
@@ -71,7 +71,7 @@ function CurrencyConverter() { // create Array to use in select option
                     <tr>
                         <td></td>
                         <td></td>
-                        <td className='text-xs text-start'>Enter Value:</td>
+                        <td className='text-xs text-start h-10'>Enter Value:</td>
                     </tr>
                     <tr>
                         <td className='text-orange-400 mx-3'>Sell</td>
@@ -88,7 +88,7 @@ function CurrencyConverter() { // create Array to use in select option
 
 
                         <input type='number'
-                            value={amount}
+                            
                             onChange={handleAmount}
                             className='primary-amount max-w-sm border rounded mx-3'
                             placeholder='Avl:'></input>
@@ -114,7 +114,7 @@ function CurrencyConverter() { // create Array to use in select option
             <button id='convert-button'
                     onClick={convert}
                 
-                className='bg-blue-500 text-white font-medium p-2 rounded hover:bg-blue-600'>Exchange</button>
+                className='mx-20 bg-blue-500 text-white font-medium p-2 rounded hover:bg-blue-600'>Exchange</button>
             <ExchangeCoins exchangeRate={result}/>
         </div>
     )

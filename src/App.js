@@ -7,11 +7,11 @@ import CoinListAPI from "./Components/Sidebar/CoinListAPI";
 
 function App() {
   return (
-    <div className="main-container flex mx-3 bg-slate-300">
+    <div className="main-container flex mx-3 bg-slate-300 antialiased">
       
         <div>
             <div>
-              <div className="flex m-3 h-10">
+              <div className="flex m-3 h-10 ">
                   <FetchData/>
                   <div className=" px-11 h-10">
                     <Search/>
@@ -24,14 +24,14 @@ function App() {
             </div>
             
             
-            <div className="flex" >
-            <div className="flex-none w-72 ... border m-3 bg-white">
+        <div className="flex  antialiased" >
+            <div className="flex-none border  w-96 ... m-3 rounded-md bg-white">
               <PieChart/>
             </div>
-            <div className="flex-initial border m-3 bg-white" >
-            <CurrencyConverter/>
+            <div className="flex-initial border m-3 rounded-md bg-white" >
+               <CurrencyConverter/>
             </div>
-            </div>
+           </div>
         </div>
         <div className="flex-wrap border my-3 rounded-md bg-white  ">
             <CoinListAPI/>
