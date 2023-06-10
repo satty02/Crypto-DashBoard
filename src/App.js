@@ -9,16 +9,17 @@ function App() {
   return (
     <div className="main-container flex mx-3 bg-slate-300 antialiased">
       
-        <div>
-            <div>
-              <div className="flex m-3 h-10 ">
-                  <FetchData/>
-                  <div className=" px-4 h-10">
+        <div className="m-3">
+            <div className="flex ...">
+                 <div className="flex-none mx-3 w-24 h-10 ...">
+                   <FetchData/>
+                  </div> 
+                  <div className="grow h-10 ...">
                     <Search/>
                   </div>
-              </div> 
-
-              <div className="border m-3 bg-slate-300 ">
+            </div>
+            <div>
+              <div className="m-3 bg-slate-300 ">
                   <SelectComponent/>
               </div>
             </div>
