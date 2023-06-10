@@ -47,7 +47,7 @@ function Search() {
         </div>
 
         <input
-        className="placeholder-gray-500 rounded-full px-3 pl-8  outline-none transition duration-700 ease-in-out focus:shadow-outline w-[30rem]"
+        className="placeholder-gray-500 rounded-full px-3 pl-8 py-1 outline-none transition duration-700 ease-in-out focus:shadow-outline w-[30rem]"
         type="text"
         id="search"
         onChange={onChange}

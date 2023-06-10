@@ -43,9 +43,9 @@ function PieChart() {
 
   return (
     <div className='piechart max-w-fit'>
-      <div className='flex'>
-        <p className=' flex-none h-5 w-16 ... m-3'>Portfolio</p>
-        <div className='flex-auto text-right h-5 w-70 ... m-3 '>Total value:{sumMktCap}</div>
+      <div className='flex pt-3'>
+        <p className='pl-3'>Portfolio</p>
+        <div className=' flex pl-16'>Total value:{sumMktCap}</div>
       </div>
       
         <Pie data={data} />

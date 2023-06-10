@@ -13,12 +13,12 @@ function App() {
             <div>
               <div className="flex m-3 h-10 ">
                   <FetchData/>
-                  <div className=" px-11 h-10">
+                  <div className=" px-4 h-10">
                     <Search/>
                   </div>
               </div> 
 
-              <div className="border m-3 bg-white ">
+              <div className="border m-3 bg-slate-300 ">
                   <SelectComponent/>
               </div>
             </div>
