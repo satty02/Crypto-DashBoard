@@ -6,18 +6,10 @@ function Sidebar() {
 
 
     
-    const coins = useSelector((state)=>state.coinsData)
-    
+ const coins = useSelector((state)=>state.coinsData)
 
 
 
-const coinsList = coins.map((coin,index)=><li className='border-b-2 bg-white' key={index}><Coin key={coin.id} 
-                                                     
-                                                     name={coin.name}
-                                                     
-                                                     volume={coin.market_cap}
-                                                     change = {coin.price_change_percentage_24h}
-                                                /></li>)
 
     return(
         <div className=''>
@@ -30,7 +22,13 @@ const coinsList = coins.map((coin,index)=><li className='border-b-2 bg-white' ke
 
                 </div>
                 <ul>
-                             {coinsList}
+                {coins.map((coin,index)=><li className='border-b-2 bg-white' key={index}><Coin key={coin.id} 
+                                                     
+                                                     name={coin.name}
+                                                     
+                                                     volume={coin.market_cap}
+                                                     change = {coin.price_change_percentage_24h}
+                                                /></li>)}
                 </ul>
 
             </div>
