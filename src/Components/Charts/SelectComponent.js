@@ -45,20 +45,18 @@ function SelectComponent() {
     }
 
 
-  return (
-    <div className='main-container border '>
-        {/* creating buttons for selecting dates */}
-        <div className='flex'>
+  return ( 
+    <div className='main-container border rounded-lg'>
+        <div className='flex mx-16 mt-4'>
                         
-            <input type='button' onClick={onClick1} name='1d' value='1' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
-            <input type='button' onClick={onClick1} name='1d' value='7' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
-            <input type='button' onClick={onClick1} name='1d' value='30' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
-            <input type='button' onClick={onClick1} name='1d' value='365' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
-            <input type='button' onClick={onClick1} name='1d' value='max' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
- 
-        <div className='flex-wrap'>
-
-            {/* creating dropdown button for selecting coin list for charts */}
+            <input type='button' onClick={onClick1} name='1d' value='1D' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1d' value='1W' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 py-2 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1d' value='1M' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 py-2 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1d' value='1Y' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 py-2 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1d' value='max' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 py-2 px-4 border border-gray-400 rounded-lg shadow hover:border-sky-600'></input>
+            
+            <div className='flex-wrap p-1'>
+                <label>{selectedCoins2}</label>
 
                 <select name={selectedCoins} className='object-contain w-13 h-8 ' value={selectedCoins} onChange={onChange}>
                     {coinsId.map((coin,index)=><option key={index}>{coin}</option>)}
@@ -73,9 +71,8 @@ function SelectComponent() {
             </div>
             
             
-            {/* creating dropdown for selecting chart type  */}
-            <div>
-                <select name={selectedChart} className='chart-type' value={selectedChart} onChange={onChangeChart}>
+            <div className='flex-wrap p-1' >
+                <select className='object-contain w-13 h-8 ' name={selectedChart} value={selectedChart} onChange={onChangeChart}>
                     <option>Select Chart</option>
                     <option>Line Chart</option>
                     <option>Bar Chart</option>

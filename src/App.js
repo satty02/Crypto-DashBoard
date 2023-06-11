@@ -9,27 +9,32 @@ import ChartDataAPI from "./Components/Charts/ChartDataAPI";
 
 function App() {
   return (
-    <div className="main-container flex mx-3 bg-slate-50">
+    <div className="main-container flex mx-3 bg-slate-300 antialiased">
       
-        <div>
-            <div>
-              <div className="flex  border m-3 bg-white">
-                  <BaseCurrency/>
-                  <div className="m-3 mx-12">
+        <div className="m-3">
+            <div className="flex ...">
+                 <div className="flex-none mx-3 w-24 h-10 ...">
+                   <FetchData/>
+                  </div> 
+                  <div className="grow h-10 ...">
                     <Search/>
                   </div>
-              </div> 
-
-              <div className="border m-3 bg-white ">
-                  <ChartDataAPI/>
+            </div>
+            <div>
+              <div className="m-3 bg-slate-300 ">
+                  <SelectComponent/>
               </div>
             </div>
             
             
-            <div className="flex border m-3 bg-white">
+        <div className="flex  antialiased" >
+            <div className="flex-none border  w-96 ... m-3 rounded-md bg-white">
               <PieChart/>
-              <CurrencyConverter/>
             </div>
+            <div className="flex-initial border m-3 rounded-md bg-white" >
+               <CurrencyConverter/>
+            </div>
+           </div>
         </div>
         <div className="flex-wrap border my-3 rounded-md bg-white  ">
             <CoinListAPI/>
