@@ -9,7 +9,7 @@ import { chosenSecondaryAction } from "./choseSecondaryAction";
 import { resultAmountAction } from "./resultAmountAction";
 import { amountQuantityAction } from "./amountQuantityAction";
 import { coinSearchAction } from "./coinSearchAction";
-import { coinSelectionAction2 } from "./coinSekectionAction2";
+import { coinSelectionAction2 } from "./coinSelectionAction2";
 import { chartDataAction2 } from "./chartDataAction2";
 
 export {

@@ -2,14 +2,16 @@ import { Chart } from 'chart.js';
 import React , {useEffect, useState} from 'react';
 import Chart1 from './Chart1';
 import { useDispatch, useSelector } from 'react-redux';
-import { CoinDatesAction, coinSelectionAction, coinSelectionAction2 } from '../../State/Action';
+import { CoinDatesAction} from '../../State/Action';
 import { chartSelectionAction } from '../../State/Action';
+import { coinSelectionAction,coinSelectionAction2 } from '../../State/Action';
+
 
 function SelectComponent() {
 
     // importing the states 
     const coins = useSelector(state=>state.coinsData);
-    const selectedCoins = useSelector(state=>state.coinSelect);
+    const selectedCoins = useSelector(state=>state.coinSelect)
     const selectedCoins2 = useSelector(state=>state.coinSelect2);
     const selectedChart = useSelector(state =>state.chartSelect)
 
@@ -28,9 +30,10 @@ function SelectComponent() {
         dispatch(coinSelectionAction(e.target.value))
     }
 
-    // const onChange2 = (e)=>{
-    //     dispatch(coinSelectionAction2(e.target.value))
-    // }
+    // selecting coins for comparision
+    const onChange2 = (e)=>{
+        dispatch(coinSelectionAction2(e.target.value))
+    }
     
     // method for dispatching selected dates 
     const onClick1 =(e)=>{
@@ -44,6 +47,7 @@ function SelectComponent() {
 
   return (
     <div className='main-container border '>
+        {/* creating buttons for selecting dates */}
         <div className='flex'>
                         
             <input type='button' onClick={onClick1} name='1d' value='1' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
@@ -51,19 +55,25 @@ function SelectComponent() {
             <input type='button' onClick={onClick1} name='1d' value='30' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
             <input type='button' onClick={onClick1} name='1d' value='365' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
             <input type='button' onClick={onClick1} name='1d' value='max' className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'></input>
-            
-            <div className='flex-wrap'>
-                <label>{selectedCoins2}</label>
+ 
+        <div className='flex-wrap'>
+
+            {/* creating dropdown button for selecting coin list for charts */}
 
                 <select name={selectedCoins} className='object-contain w-13 h-8 ' value={selectedCoins} onChange={onChange}>
                     {coinsId.map((coin,index)=><option key={index}>{coin}</option>)}
                 </select>
-                {/* <select name={selectedCoins2} className='object-contain w-13 h-8 ' value={selectedCoins2} onChange={onChange2}>
+
+            {/* creating second dropdown for selecting coins llist for second chart comparison*/}
+                
+                <select name={selectedCoins2} className='object-contain w-13 h-8 ' value={selectedCoins2} onChange={onChange2}>
                     {coinsId.map((coin,index)=><option key={index}>{coin}</option>)}
-                </select>        */}
+                </select>     
+
             </div>
             
             
+            {/* creating dropdown for selecting chart type  */}
             <div>
                 <select name={selectedChart} className='chart-type' value={selectedChart} onChange={onChangeChart}>
                     <option>Select Chart</option>

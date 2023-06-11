@@ -10,10 +10,7 @@ function FetchData() {
 
   const dispatch = useDispatch()
  
-  const baseCurrency = useSelector(state=>state.CoinCurrency);
-  const coinsDate = useSelector(state=>state.coinsDate);
 
-  const chartDataList = useSelector(state=>state.chartData);
 
   
 
@@ -22,7 +19,7 @@ function FetchData() {
 
     const urls = 
     [
-        `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=${baseCurrency}&days=${coinsDate}`,
+
         `https://api.coingecko.com/api/v3/exchange_rates`,
     ]
 
@@ -32,20 +29,15 @@ function FetchData() {
     // spreading all datas inito seperate variables using spread operators 
     axios.all(request).then(
         axios.spread((...responses) => {
-            const coin_chart_data = responses[1].data;
             const coin_exchange = responses[2].data;
             
             // dispatching all the vaiables from api's into the respective reducers
             dispatch(coinExchangeAction(coin_exchange));
-            dispatch(chartDataAction(coin_chart_data.prices));    
         }
     ));
     }
 
-    // calling the function using useEffect to avoid the contineous calling of the api's
-    useEffect(()=>{
-        getData();
-    },[baseCurrency,chartDataList])
+    
 
   return (
     

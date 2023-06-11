@@ -29,21 +29,13 @@ import { useDispatch, useSelector } from 'react-redux';
 function Chart1() {
 
     const chartData = useSelector(state=>state.chartData);
+    console.log(chartData)
+
     const chartData2 = useSelector(state=>state.chartData2)
-    const selectedChart = useSelector(state =>state.chartSelect)
-    const cur = useSelector(state=>state.CoinCurrency);
+    console.log(chartData2)
 
-    const dispatch = useDispatch();
-
-    
-
-    // useEffect(()=>{
-    // axios.get(`https://api.coingecko.com/api/v3/coins/${coin2}/market_chart?vs_currency=${cur}&days=${days}`)
-    //         .then((res)=>res.data)
-    //         .then(prices=>
-    //             dispatch(chartDataAction(prices.prices)))
-    //         .catch(error=>console.log(error))
-    //         },[chartData2])
+    const selectedChart = useSelector(state =>state.chartSelect);
+   
             const options = {
                 responsive: true,
                 plugins: {

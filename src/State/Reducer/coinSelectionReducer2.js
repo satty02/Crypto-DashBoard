@@ -1,6 +1,6 @@
 import { COIN_SELECTION2 } from "../Action/actionTypes";
 
-const INIT_STATE = ''
+const INIT_STATE = 'bitcoin'
 
 export const coinSelectionReducer2 = (state = INIT_STATE, action)=>{
     switch(action.type){

@@ -10,8 +10,6 @@ it('render base currency with redux store',()=>{
     const initialState = '';
     const mockStore =  configureStore();
     const store = mockStore(initialState);
-
-
     const {baseCurrency} = render(
     <Provider store={store}>
         <BaseCurrency/>
@@ -19,6 +17,22 @@ it('render base currency with redux store',()=>{
     )
     
 })
+
+it('render base currency item List',()=>{
+    const initialState = '';
+    const mockStore =  configureStore();
+    const store = mockStore(initialState);
+    const {baseCurrency} = render(
+    <Provider store={store}>
+        <BaseCurrency/>
+    </Provider>
+    )
+
+    const selectItems = screen.getAllByRole('option');
+    expect(selectItems).toHaveLength(4);
+    
+})
+
 
 it('on changing dispatched my action',()=>{
     const initialState = 'inr';
