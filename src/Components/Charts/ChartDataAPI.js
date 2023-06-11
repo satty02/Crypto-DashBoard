@@ -35,7 +35,10 @@ function ChartDataAPI() {
             // if response is ok then parsing response into json
             return res.json();
         })
-        .then(data => dispatch(chartDataAction(data.prices)))
+        .then(data =>{
+            console.log(data)
+            dispatch(chartDataAction(data.prices))
+        })
 
         
     }
@@ -52,7 +55,10 @@ function ChartDataAPI() {
             // if response is ok then parsing response into json
             return res.json();
         })
-        .then(data => dispatch(chartDataAction2(data.prices)));
+        .then(data =>{
+            console.log(data)
+            dispatch(chartDataAction2(data.prices))
+        });
     }
 
     getData();

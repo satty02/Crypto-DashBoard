@@ -12,7 +12,7 @@ function BaseCurrency() {
 
   return (
     <div className=' w-24 h-10 font-semibold  z-10 hover::shadow-outline' >
-              <select id="currency" data-testId='select' name='currency'
+              <select id="currency" data-testid='select' name='currency'
                 // dispatching the selected state into base currency action  
                  onChange={(e)=>dispatch(BaseCurrencyAction(e.target.value))} 
                  value={baseCurrency} 

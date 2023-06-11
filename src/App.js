@@ -22,7 +22,7 @@ function App() {
             </div>
             <div>
               <div className="m-3 bg-slate-300 ">
-                  <SelectComponent/>
+                  <ChartDataAPI/>
               </div>
             </div>
             

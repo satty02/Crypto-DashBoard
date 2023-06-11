@@ -29,7 +29,7 @@ const rootReducer = combineReducers({
     resultAmount : resultAmountReducer,
     amountQuantity : amountQuantityReducer,
     coinSearch : coinSearchReducer,
-    coinselect2: coinSelectionReducer2,
+    coinSelect2: coinSelectionReducer2,
     chartData2:chartDataReducer2
 })
 

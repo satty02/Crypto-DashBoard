@@ -9,7 +9,7 @@ import { coinSelectionAction,coinSelectionAction2 } from '../../State/Action';
 
 function SelectComponent() {
 
-    // importing the states 
+        // importing the states 
     const coins = useSelector(state=>state.coinsData);
     const selectedCoins = useSelector(state=>state.coinSelect)
     const selectedCoins2 = useSelector(state=>state.coinSelect2);
@@ -49,14 +49,14 @@ function SelectComponent() {
     <div className='main-container border rounded-lg'>
         <div className='flex mx-16 mt-4'>
                         
-            <input type='button' onClick={onClick1} name='1d' value='1D' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
-            <input type='button' onClick={onClick1} name='1d' value='1W' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 py-2 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
-            <input type='button' onClick={onClick1} name='1d' value='1M' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 py-2 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
-            <input type='button' onClick={onClick1} name='1d' value='1Y' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 py-2 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1d' value='1' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1d' value='7' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 py-2 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1d' value='30' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 py-2 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1d' value='365' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 py-2 px-4 border border-gray-400 rounded-lg shadow  hover:border-sky-600'></input>
             <input type='button' onClick={onClick1} name='1d' value='max' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 py-2 px-4 border border-gray-400 rounded-lg shadow hover:border-sky-600'></input>
             
             <div className='flex-wrap p-1'>
-                <label>{selectedCoins2}</label>
+                
 
                 <select name={selectedCoins} className='object-contain w-13 h-8 ' value={selectedCoins} onChange={onChange}>
                     {coinsId.map((coin,index)=><option key={index}>{coin}</option>)}
