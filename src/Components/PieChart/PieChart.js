@@ -13,6 +13,12 @@ function PieChart() {
 
     const sumMktCap = mkt_cap.slice(0,3).reduce((result,item)=>result+item.market_cap,0);
 
+    const options = {
+                
+      style:"width: 900px; height: 500px"
+     
+    };
+
     const data = {
         labels: mkt_cap.map(coins=>coins.name).slice(0,3),
         datasets: [
@@ -48,7 +54,8 @@ function PieChart() {
         <div className=' flex pl-16'>Total value:{sumMktCap}</div>
       </div>
       
-        <Pie data={data} />
+        <Pie data={data}
+        options={options} />
     </div>
   )
 }

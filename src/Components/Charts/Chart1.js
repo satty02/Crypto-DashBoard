@@ -37,22 +37,17 @@ function Chart1() {
 
    
             const options = {
-                responsive: true,
-                plugins: {
-                  legend: {
-                    position: 'top',
-                  },
-                  title: {
-                    display: true,
-                    text: 'Chart.js Line Chart',
-                  },
-                },
+                
+                maintainAspectRatio: false,
+                height:60,
+                widht:100
+               
               };
               
               const labels = chartData.map(time=>moment(time[0]).format('MM/YY HH:MM'))
               
               const data = {
-                labels,
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                 datasets: [
                   {
                     label: `${selectedCoins}`,

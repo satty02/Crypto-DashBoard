@@ -20,7 +20,7 @@ function App() {
                     <Search/>
                   </div>
             </div>
-            <div>
+            <div className="Barchart" >
               <div className="m-3 bg-slate-300 ">
                   <ChartDataAPI/>
               </div>
