@@ -6,6 +6,7 @@ import FetchData from "./APIdata/FetchData";
 import CoinListAPI from "./Components/Sidebar/CoinListAPI";
 import BaseCurrency from "./Components/BaseCurrency/BaseCurrency";
 import ChartDataAPI from "./Components/Charts/ChartDataAPI";
+import ExchangeAPI from "./Components/Exchange/ExchangeAPI";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <div className="m-3">
             <div className="flex ...">
                  <div className="flex-none mx-3 w-24 h-10 ...">
-                   <FetchData/>
+                  <BaseCurrency/>
                   </div> 
                   <div className="grow h-10 ...">
                     <Search/>
@@ -32,7 +33,7 @@ function App() {
               <PieChart/>
             </div>
             <div className="flex-initial border m-3 rounded-md bg-white" >
-               <CurrencyConverter/>
+               <ExchangeAPI/>
             </div>
            </div>
         </div>

@@ -1,45 +1,48 @@
-import React, { useEffect } from 'react';
-import ExchangeCoins from './ExchangeCoins';
-import { useDispatch, useSelector } from 'react-redux';
-import { coinExchangeAction } from '../../State/Action/coinExchangeAction';
-import { resultAmountAction } from '../../State/Action/resultAmountAction';
-import { chosenPrimaryAction } from '../../State/Action/chosePrimaryAction';
-import { chosenSecondaryAction } from '../../State/Action/choseSecondaryAction';
-import { amountQuantityAction } from '../../State/Action';
+import React from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {resultAmountAction} from '../../State/Action/resultAmountAction';
+import {chosenPrimaryAction} from '../../State/Action/chosePrimaryAction';
+import {chosenSecondaryAction} from '../../State/Action/choseSecondaryAction';
+import {amountQuantityAction} from '../../State/Action';
 
-function CurrencyConverter() { // create Array to use in select option
+function CurrencyConverter() {
+    // create Array to use in select option
 
-        const chosenPrimary = useSelector(state=>state.primaryCoin);
+    // selected primary coin which is used to exchange
+    const chosenPrimary = useSelector(state => state.primaryCoin);
 
-        const chosenSecondary = useSelector(state=>state.secondaryCoin);
+    // selected primary coin in which user want to exchange
+    const chosenSecondary = useSelector(state => state.secondaryCoin);
 
-        const amount = useSelector(state=>state.amountQuantity)
+    const amount = useSelector(state => state.amountQuantity)
 
-        const result = useSelector(state=>state.resultAmount)
+    const result = useSelector(state => state.resultAmount)
 
-        const coinsList = useSelector(state=>state.coinsData)
+    // this returns array of coins list
+    const coinsList = useSelector(state => state.coinsData)
+    console.log(coinsList)
+
+    // this return the object having key as symbol
+    const exchangeCoins = useSelector(state => state.coinExchange);
+    console.log(exchangeCoins)
 
 
-        const exchangeCoins = useSelector(state=>state.coinExchange);
-
-    
     const dispatch = useDispatch()
 
 
-    
     const listExchangeCoins = []
+    console.log(listExchangeCoins)
 
-    for(let coin in exchangeCoins){
+    for (let coin in exchangeCoins) {
         listExchangeCoins.push(coin)
     }
-    
 
 
-    const handlePrimary =(e)=>{
+    const handlePrimary = (e) => {
         dispatch(chosenPrimaryAction(e.target.value))
     }
 
-    const handleSecondary = (e) =>{
+    const handleSecondary = (e) => {
         dispatch(chosenSecondaryAction(e.target.value))
     }
 
@@ -47,24 +50,22 @@ function CurrencyConverter() { // create Array to use in select option
         dispatch(amountQuantityAction(e.target.value))
     }
 
-    const convert = ()=>{
-        const btc_select = coinsList.filter(coin=>coin.symbol==='btc')
-    const btc_price = btc_select[0].current_price
+    const convert = () => {
+        const btc_select = coinsList.filter(coin => coin.symbol === 'btc')
+        const btc_price = btc_select[0].current_price
 
-    const coin_1_value = btc_price/exchangeCoins[chosenPrimary].value
-    const coin_2_value = btc_price/exchangeCoins[chosenSecondary].value
+        const coin_1_value = btc_price / exchangeCoins[chosenPrimary].value
+        const coin_2_value = btc_price / exchangeCoins[chosenSecondary].value
 
-    
-        const conv = coin_1_value/coin_2_value
-        dispatch(resultAmountAction(conv*amount))
+
+        const conv = coin_1_value / coin_2_value
+        dispatch(resultAmountAction(conv * amount))
     }
-    
-    
-    
+
+
     return (
         <div className='currency-converter border max-w-md m-3'>
-            <h1>
-                Exchange Coins</h1>
+            <h1>Exchange Coins</h1>
             <table className='table-auto'>
 
                 <tbody>
@@ -88,7 +89,7 @@ function CurrencyConverter() { // create Array to use in select option
 
 
                         <input type='number'
-                            
+
                             onChange={handleAmount}
                             className='primary-amount max-w-sm border rounded mx-3'
                             placeholder='Avl:'></input>
@@ -112,10 +113,10 @@ function CurrencyConverter() { // create Array to use in select option
                 </tbody>
             </table>
             <button id='convert-button'
-                    onClick={convert}
-                
+                onClick={convert}
+
                 className='mx-20 bg-blue-500 text-white font-medium p-2 rounded hover:bg-blue-600'>Exchange</button>
-            <ExchangeCoins exchangeRate={result}/>
+            <div className='exchange'>Exchange Rate {result}</div>
         </div>
     )
 }
