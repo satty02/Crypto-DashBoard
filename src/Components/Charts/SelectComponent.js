@@ -47,7 +47,7 @@ function SelectComponent() {
 
   return ( 
     <div className='main-container border rounded-lg'>
-        <div className='flex mx-auto h-8 mt-4'>
+        <div className='flex mx-16 h-8 mt-4'>
                         
             <input type='button' onClick={onClick1} name='1d' value='1D' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 px-4 border rounded-lg shadow  hover:border-sky-600'></input>
             <input type='button' onClick={onClick1} name='1d' value='1W' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold mx-1 px-4 border rounded-lg shadow  hover:border-sky-600'></input>
