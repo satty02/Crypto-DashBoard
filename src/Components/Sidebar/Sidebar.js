@@ -13,7 +13,7 @@ function Sidebar() {
 
     return(
         <div className=''>
-            <div className='main-sidebar scroll-mb-24 h-screen ... text-clip overflow-scroll'>
+            <div className='main-sidebar overflow-y-auto h-screen ...'>
                 
                 <div className='mx-10 my-6 font-medium'> 
                     <h1> Cryptocurrency by<br /> market cap</h1>

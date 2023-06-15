@@ -37,7 +37,7 @@ function App() {
             </div>
            </div>
         </div>
-        <div className="flex-wrap border my-3 rounded-md bg-white  ">
+        <div className="flex-wrap border my-3 mr-6 rounded-md bg-white  ">
             <CoinListAPI/>
         </div>
         
