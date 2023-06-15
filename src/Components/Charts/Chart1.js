@@ -40,7 +40,7 @@ function Chart1() {
                 
                 maintainAspectRatio: false,
                 height:60,
-                widht:100
+                widht:80
                
               };
               

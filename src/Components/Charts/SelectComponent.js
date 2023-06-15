@@ -73,7 +73,7 @@ function SelectComponent() {
             
             
             <div className='flex-wrap' >
-                <select className='object-contain w-13 h-8 rounded-lg' name={selectedChart} value={selectedChart} onChange={onChangeChart}>
+                <select className='object-contain w-auto h-8 rounded-lg' name={selectedChart} value={selectedChart} onChange={onChangeChart}>
                     <option>Chart type</option>
                     <option>Line Chart</option>
                     <option>Bar Chart</option>

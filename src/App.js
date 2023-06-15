@@ -14,10 +14,10 @@ function App() {
       
         <div className="m-3">
             <div className="flex ...">
-                 <div className="flex-none mx-3 w-24 h-10 ...">
+                 <div className="Top Currency Selector flex-none mx-3 w-24 h-10 ...">
                   <BaseCurrency/>
                   </div> 
-                  <div className="grow h-10 ...">
+                  <div className="Search Bar grow h-10 ...">
                     <Search/>
                   </div>
             </div>
@@ -29,10 +29,10 @@ function App() {
             
             
         <div className="flex  antialiased" >
-            <div className="flex-none border  w-96 ... m-3 rounded-md bg-white">
+            <div className="Piechart flex-none border  w-96 ... mx-3 rounded-md bg-white">
               <PieChart/>
             </div>
-            <div className="flex-initial border m-3 rounded-md bg-white" >
+            <div className="flex-initial grow border mx-3 rounded-md bg-white" >
                <ExchangeAPI/>
             </div>
            </div>
