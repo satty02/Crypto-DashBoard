@@ -59,19 +59,19 @@ function CurrencyConverter() {
 
 
     return (
-        <div className='currency-converter border max-w-md m-3'>
-            <h1>Exchange Coins</h1>
-            <table className='table-auto'>
+        <div className='currency-converter font-semibold rounded-lg'>
+              <div className='m-6' > Exchange Coins</div>
+              <table className='table-auto mx-3'>
 
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td className='text-xs text-start h-10'>Enter Value:</td>
-                    </tr>
-                    <tr>
-                        <td className='text-orange-400 mx-3'>Sell</td>
-                        <select name='option-1' className='coin-options'
+                    <div>
+                    
+                        <div className='text-xs text-center h-10'>Enter Value:</div>
+                    </div>
+                    <div className='flex' >
+                        <div className= 'flex-none text-orange-400 p-4  w-20'>Sell</div>
+                        <div className='flex-initial'>
+                        <select name='option-1' className='coin-options m-3 h-8 w-20 rounded-lg bg-slate-200'
                             value={chosenPrimary}
                             // set the primary value of select input
                             onChange={handlePrimary}>
@@ -81,17 +81,19 @@ function CurrencyConverter() {
                                     {crypto}</option>
                             ))
                         } </select>
+                        </div>
 
 
-                        <input type='number'
+                        <div  className='flex-initial p-3'>
+                        <input type='number'  onChange={handleAmount} className='primary-amount rounded-lg border h-8 px-4'placeholder='Avl:'></input>
+                        </div>
+                    </div>
 
-                            onChange={handleAmount}
-                            className='primary-amount max-w-sm border rounded mx-3'
-                            placeholder='Avl:'></input>
-                    </tr>
-                    <tr>
-                        <td className='text-green-600'>Buy</td>
-                        <select name='option-2' className='coin-options'
+
+                    <div className='flex' >
+                        <div className='flex-initial text-green-600 p-4  w-20'>Buy</div>
+                       <div>
+                       <select name='option-2' className='coin-options m-3 h-8 w-20 rounded-lg bg-slate-200'
                             value={chosenSecondary}
                             onChange={handleSecondary}>
                             {
@@ -100,18 +102,22 @@ function CurrencyConverter() {
                                     {crypto}</option>
                             ))
                         } </select>
+                       </div>
+                        <div className='flex-initial' >
                         <input type='number'
                             value={result}
                             disabled={true}
-                            className='primary-amount mx-3 max-w-sm'></input>
-                    </tr>
+                            className='primary-amount m-3 max-w-sm rounded-lg border h-8 px-4 '></input>
+                        </div>
+                    </div>
                 </tbody>
-            </table>
-            <button id='convert-button'
-                onClick={convert}
+              </table>
+               <div className='text-center' >
+                  <button id='convert-button'
+                    onClick={convert}
 
-                className='mx-20 bg-blue-500 text-white font-medium p-2 rounded hover:bg-blue-600'>Exchange</button>
-            <div className='exchange'>Exchange Rate {result}</div>
+                    className='px-2 h-8  bg-blue-500 rounded-lg  hover:bg-blue-600'>Exchange</button>
+                </div>
         </div>
     )
 }
