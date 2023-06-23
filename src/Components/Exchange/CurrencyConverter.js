@@ -20,18 +20,13 @@ function CurrencyConverter() {
 
     // this returns array of coins list
     const coinsList = useSelector(state => state.coinsData)
-    console.log(coinsList)
 
     // this return the object having key as symbol
     const exchangeCoins = useSelector(state => state.coinExchange);
-    console.log(exchangeCoins)
-
 
     const dispatch = useDispatch()
 
-
     const listExchangeCoins = []
-    console.log(listExchangeCoins)
 
     for (let coin in exchangeCoins) {
         listExchangeCoins.push(coin)

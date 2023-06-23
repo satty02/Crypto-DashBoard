@@ -36,7 +36,6 @@ function ChartDataAPI() {
             return res.json();
         })
         .then(data =>{
-            console.log(data)
             dispatch(chartDataAction(data.prices))
         })
 
@@ -56,7 +55,6 @@ function ChartDataAPI() {
             return res.json();
         })
         .then(data =>{
-            console.log(data)
             dispatch(chartDataAction2(data.prices))
         });
     }

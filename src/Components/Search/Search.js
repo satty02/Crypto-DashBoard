@@ -1,42 +1,42 @@
-import React,{useEffect, useState} from 'react';
-import CoinDetail from './CoinDetail';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { coinSearchAction } from '../../State/Action';
+import {useNavigate} from 'react-router-dom';
 
 
 function Search() {
+
+    const navigate = useNavigate();
+
+    const coins = useSelector(state=>state.coinsData)
     
     const dispatch = useDispatch();
 
-    const coins = useSelector(state=>state.coinsData);
-
     const search = useSelector(state=>state.coinSearch);
 
-    const onChange = (e)=>{
+  const Result = coins.filter(coin=>coin.name.toLowerCase()===search.toLowerCase())
+
+  console.log(Result)
+
+
+    
+    const onChange = (e)=>{    
         dispatch(coinSearchAction(e.target.value))
     }
 
-    
-    const filterCoins = coins.filter(coin=>coin.name.toLowerCase()===search.toLowerCase())
-
+    const handleEnter =(e)=>{
+        if(e.key==='Enter'){
+            if(Result.length>0){
+                e.preventDefault();
+                navigate(`/search?q=${search}`)
+            }else{
+                alert('Please enter correct coin')
+            }  
+        }
+    }
     
       return (
     <div className='border-black'>
-        <div className='border-red-700'>
-            {
-            
-            filterCoins.map(coin=>(
-                <CoinDetail
-                    key={coin.id}
-                    id = {coin.id}
-                    name={coin.name}
-                    symbol={coin.symbol}
-                    market_cap = {coin.market_cap}
-                    current_price = {coin.current_price}
-                    image = {coin.image}
-                />
-            ))}
-        </div> 
 
         <div class=' mx-3 max-w-full'>
     <div class="relative flex items-center w-full h-10 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
@@ -52,7 +52,10 @@ function Search() {
         id="search"
         onChange={onChange}
         value={search}
-        placeholder="Search By Coin" /> 
+        placeholder="Search By Coin" 
+        onKeyPress={handleEnter}
+        />
+
     </div>
 </div>
 

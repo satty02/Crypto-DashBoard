@@ -1,12 +1,12 @@
-import SelectComponent from "./Components/Charts/SelectComponent";
-import CurrencyConverter from "./Components/Exchange/CurrencyConverter";
 import Search from "./Components/Search/Search";
 import PieChart from "./Components/PieChart/PieChart";
-import FetchData from "./APIdata/FetchData";
 import CoinListAPI from "./Components/Sidebar/CoinListAPI";
 import BaseCurrency from "./Components/BaseCurrency/BaseCurrency";
 import ChartDataAPI from "./Components/Charts/ChartDataAPI";
 import ExchangeAPI from "./Components/Exchange/ExchangeAPI";
+import CoinDetail from "./Components/Search/CoinDetail";
+
+import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -40,7 +40,6 @@ function App() {
         <div className="flex-wrap border my-3 rounded-md bg-white  ">
             <CoinListAPI/>
         </div>
-        
       </div>
   
          
