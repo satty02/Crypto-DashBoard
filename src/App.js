@@ -4,9 +4,8 @@ import CoinListAPI from "./Components/Sidebar/CoinListAPI";
 import BaseCurrency from "./Components/BaseCurrency/BaseCurrency";
 import ChartDataAPI from "./Components/Charts/ChartDataAPI";
 import ExchangeAPI from "./Components/Exchange/ExchangeAPI";
-import CoinDetail from "./Components/Search/CoinDetail";
 
-import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
+import DropdownMultiSelect from "./Components/Charts/DropdownMultiSelect";
 
 function App() {
   return (

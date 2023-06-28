@@ -1,35 +1,43 @@
 import React from "react";
-import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import { useSelector } from "react-redux";
+import  Chart  from "chart.js/auto";
+import moment from "moment";
 
 const BarChart = () => {
 
-    const chartData2 = useSelector(state=>state.chartData2);
     const chartData = useSelector(state=>state.chartData);
  // selected coin is 
  const selectedCoins = useSelector(state=>state.coinSelect)
- const selectedCoins2 = useSelector(state=>state.coinSelect2)
 
-  const labels = chartData.map(time=>time[0])
+
+  const generateRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+  
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+  
+    return color;
+  };
+  
+  const randomColors = Array.from({ length: chartData.length }).map(() => generateRandomColor());
+  
+  const labels = ['Jan' , 'Feb' , 'Mar' , 'Apr', 'May', 'Jun' , 'Jul' ,'Aug', 'Sep', 'Oct', 'Nov','Dec']
   
 
+  const chartMultiData = chartData.map((data,index)=>({
+    label: `${selectedCoins[index]}`,
+    backgroundColor: randomColors[index],
+    borderColor: randomColors[index],
+    data: data.map(price=>price[1]),
+  }))
+
+  console.log(labels)
   const data = {
     labels: labels,
-    datasets: [
-      {
-        label: `${selectedCoins}`,
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
-        data: chartData.map(price=>price[1]),
-        },
-        {
-            label: `${selectedCoins2}`,
-            backgroundColor: "	rgb(0,0,255)",
-            borderColor: "	rgb(0,0,255)",
-            data: chartData2.map(price=>price[1]),
-            }
-    ],
+    datasets: chartMultiData,
   };
   return (
     <div>

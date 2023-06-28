@@ -16,10 +16,7 @@ function Search() {
 
   const Result = coins.filter(coin=>coin.name.toLowerCase()===search.toLowerCase())
 
-  console.log(Result)
-
-
-    
+   
     const onChange = (e)=>{    
         dispatch(coinSearchAction(e.target.value))
     }
@@ -52,7 +49,7 @@ function Search() {
         id="search"
         onChange={onChange}
         value={search}
-        placeholder="Search By Coin" 
+        placeholder="Search" 
         onKeyPress={handleEnter}
         />
 

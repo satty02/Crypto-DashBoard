@@ -1,39 +1,23 @@
-import { Chart } from 'chart.js';
-import React , {useEffect, useState} from 'react';
-import Chart1 from './Chart1';
+import React, { useState }  from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CoinDatesAction} from '../../State/Action';
 import { chartSelectionAction } from '../../State/Action';
-import { coinSelectionAction,coinSelectionAction2 } from '../../State/Action';
-
+import LineChart from "./LineChart";
+import BarChart from "./BarChart";
+import DropdownMultiSelect from './DropdownMultiSelect';
 
 function SelectComponent() {
+    const [date , setDate] = useState('')
+
 
         // importing the states 
-    const coins = useSelector(state=>state.coinsData);
-    const selectedCoins = useSelector(state=>state.coinSelect)
-    const selectedCoins2 = useSelector(state=>state.coinSelect2);
     const selectedChart = useSelector(state =>state.chartSelect)
-
 
     // importing use dispatch 
     const dispatch = useDispatch();
 
-    //filterining the coins based on their names
-    const coinsId = coins.map(coin=>coin.id)
-
     //selecting days
     const days = useSelector(state=>state.coinsDate)
-    
-    //selecting the coin name
-    const onChange = (e)=>{
-        dispatch(coinSelectionAction(e.target.value))
-    }
-
-    // selecting coins for comparision
-    const onChange2 = (e)=>{
-        dispatch(coinSelectionAction2(e.target.value))
-    }
     
     // method for dispatching selected dates 
     const onClick1 =(e)=>{
@@ -44,32 +28,54 @@ function SelectComponent() {
         dispatch(chartSelectionAction(e.target.value))
     }
 
+    const dateToDays = (date) => {
+        const today = new Date();
+        const selectedDate = new Date(date);
+      
+        // Calculate the time difference in milliseconds
+        const timeDifference =  today.getTime() - selectedDate.getTime() ;
+      
+        // Convert milliseconds to days
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      
+        return days;
+      };
+      
+
+    const handlechange = (e)=>{
+        
+        const days = dateToDays(e.target.value);
+        
+        dispatch(CoinDatesAction(days))
+
+    }
+
+
+    let PlotChart;
+
+if(selectedChart==='Line Chart'){
+             PlotChart =  <LineChart/>
+}else if(selectedChart==='Bar Chart'){
+          PlotChart =   <BarChart/>
+}else{
+        PlotChart = <p>Please Seclect chart</p>
+}
+
+
 
   return ( 
-    <div className='main-container border rounded-lg'>
-        <div className='flex mx-16 h-8 mt-4'>
+    <div className='flex flex-col main-container border rounded-lg space-x-3'>
+        <div className='flex mx-16 h-8 mt-4 space-x-2 mb-4'>
                         
-            <input type='button' onClick={onClick1} name='1d' value='1D' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
-            <input type='button' onClick={onClick1} name='1d' value='1W' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
-            <input type='button' onClick={onClick1} name='1d' value='1M' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
-            <input type='button' onClick={onClick1} name='1d' value='6M' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
-            <input type='button' onClick={onClick1} name='1d' value='1Y' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
-            <input type='date' onClick={onClick1} name='1d' value='max' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-7  px-1 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1d' value='1' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1W' value='7' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1M' value='30' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='6M' value='180' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='button' onClick={onClick1} name='1Y' value='365' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='date' onChange={handlechange} name='date' value={date} className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-7  px-1 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
             
-         <div className='flex-wrap'>
-                
-
-                <select name={selectedCoins} className='object-contain w-15 h-8 m-1 p-1 rounded-lg  bg-white hover:bg-blue-100 text-gray-800 font-semibold border  shadow  hover:border-sky-600' value={selectedCoins} onChange={onChange}>
-                    {coinsId.map((coin,index)=><option key={index}>{coin}</option>)}
-                </select>
-
-            {/* creating second dropdown for selecting coins llist for second chart comparison*/}
-                
-         </div>
-         <div>
-                <select name={selectedCoins2} className='object-contain w-15 h-8 m-1 p-1 rounded-lg  bg-white hover:bg-blue-100 text-gray-800 font-semibold border  shadow  hover:border-sky-600' value={selectedCoins2} onChange={onChange2}>
-                    {coinsId.map((coin,index)=><option key={index}>{coin}</option>)}
-                </select>
+         <div> 
+                <DropdownMultiSelect/>          
          </div>
             
             
@@ -81,13 +87,9 @@ function SelectComponent() {
                 </select>
         </div>
     </div>       
-        {/* <p>selected days is {days}</p> 
-        <p>selected coin is {selectedCoins}</p> */}
+        
         <div>
-            <Chart1 coin={selectedCoins}
-                    coin2 = {selectedCoins2}
-                    days = {days}
-                />
+            {PlotChart}
         </div>
     </div>
 
