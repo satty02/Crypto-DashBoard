@@ -5,11 +5,10 @@ import BaseCurrency from "./Components/BaseCurrency/BaseCurrency";
 import ChartDataAPI from "./Components/Charts/ChartDataAPI";
 import ExchangeAPI from "./Components/Exchange/ExchangeAPI";
 
-import DropdownMultiSelect from "./Components/Charts/DropdownMultiSelect";
 
 function App() {
   return (
-    <div className="main-container flex mx-3 bg-slate-300 antialiased">
+    <div className="main-container flex mx-3 bg-slate-300 antialiased w-100">
       
         <div className="m-3">
             <div className="flex ...">
@@ -26,7 +25,7 @@ function App() {
               </div>
             </div>
             
-            
+        
         <div className="flex  antialiased" >
             <div className="Piechart flex-none border  w-96 ... mx-3 rounded-md bg-white">
               <PieChart/>

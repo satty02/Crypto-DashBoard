@@ -11,9 +11,8 @@ function Sidebar() {
 
 
 
-    return(
-        <div className=''>
-            <div className='main-sidebar overflow-y-auto h-screen ...'>
+    return(  
+            <div className='main-sidebar overflow-y-auto h-screen'>
                 
                 <div className='mx-10 my-6 font-medium'> 
                     <h1> Cryptocurrency by<br /> market cap</h1>
@@ -32,7 +31,6 @@ function Sidebar() {
                 </ul>
 
             </div>
-        </div>
     )
 }
 

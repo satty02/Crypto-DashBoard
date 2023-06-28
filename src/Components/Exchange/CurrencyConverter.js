@@ -19,21 +19,16 @@ function CurrencyConverter() {
     const result = useSelector(state => state.resultAmount)
 
     // this returns array of coins list
-    const coinsList = useSelector(state => state.coinsData)
+    const coinsList = useSelector(state => state.coinsData);
 
     // this return the object having key as symbol
     const exchangeCoins = useSelector(state => state.coinExchange);
 
     const dispatch = useDispatch()
 
-    const listExchangeCoins = []
+    const listExchangeCoins = Object.values(exchangeCoins).map(currency=>currency.name)
 
-    for (let coin in exchangeCoins) {
-        listExchangeCoins.push(coin)
-    }
-
-
-    const handlePrimary = (e) => {
+    const handlePrimary = (e) => {        
         dispatch(chosenPrimaryAction(e.target.value))
     }
 
@@ -45,12 +40,15 @@ function CurrencyConverter() {
         dispatch(amountQuantityAction(e.target.value))
     }
 
+    const shortPrimary = Object.keys(exchangeCoins).filter(currency=>exchangeCoins[currency].name===chosenPrimary)
+    const shortSecondary = Object.keys(exchangeCoins).filter(currency=>exchangeCoins[currency].name===chosenSecondary)
+
     const convert = () => {
-        const btc_select = coinsList.filter(coin => coin.symbol === 'btc')
+        const btc_select = coinsList.filter(coin => coin.name === 'Bitcoin')
         const btc_price = btc_select[0].current_price
 
-        const coin_1_value = btc_price / exchangeCoins[chosenPrimary].value
-        const coin_2_value = btc_price / exchangeCoins[chosenSecondary].value
+        const coin_1_value = btc_price / exchangeCoins[shortPrimary[0]].value
+        const coin_2_value = btc_price / exchangeCoins[shortSecondary[0]].value
 
 
         const conv = coin_1_value / coin_2_value

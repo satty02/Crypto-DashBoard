@@ -1,11 +1,10 @@
-import React from 'react'
-import {useDispatch} from 'react-redux'
+import React, { useEffect } from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import {coinExchangeAction} from '../../State/Action/coinExchangeAction'
 import CurrencyConverter from './CurrencyConverter';
 
 function ExchangeAPI() {
     const dispatch = useDispatch()
-
     const getData = () => {
 
         const url = `https://api.coingecko.com/api/v3/exchange_rates`
@@ -20,7 +19,10 @@ function ExchangeAPI() {
         })
 
     };
-     getData();
+
+    useEffect(()=>{
+         getData();
+    },[])
 
     return (
         <CurrencyConverter/>
