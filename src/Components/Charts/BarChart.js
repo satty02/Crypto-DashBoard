@@ -34,7 +34,6 @@ const BarChart = () => {
     data: data.map(price=>price[1]),
   }))
 
-  console.log(labels)
   const data = {
     labels: labels,
     datasets: chartMultiData,

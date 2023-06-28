@@ -1,6 +1,6 @@
 import { CHOOSE_PRIMARY } from "../Action/actionTypes";
 
-const INIT_STATE = 'btc'
+const INIT_STATE = 'Bitcoin'
 
 export const chosenPrimaryReducer = (state=INIT_STATE,action) =>{
     switch(action.type){
