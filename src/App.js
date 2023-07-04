@@ -9,12 +9,12 @@ import ExchangeAPI from "./Components/Exchange/ExchangeAPI";
 function App() {
     return (
         <div className="main-containe bg-slate-300 antialiased flex">
-            <div className="flex-row flex-1">
-                <div className="flex ml-5 mt-5" >
+            <div className="flex-row max-w-fit">
+                <div className="flex ml-5 mt-5 " >
                     <div>
                         <BaseCurrency/>
                     </div>
-                    <div className="flex-1 mr-2">
+                    <div className=" mr-2">
                         <Search/>
                     </div>
                 </div>
