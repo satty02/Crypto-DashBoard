@@ -23,13 +23,11 @@ function CurrencyConverter() {
 
     // this return the object having key as symbol
     const exchangeCoins = useSelector(state => state.coinExchange);
-    console.log()
     const dispatch = useDispatch()
 
-    const listExchangeCoins = Object.values(exchangeCoins).map(currency=>currency.name)
+    const listExchangeCoins = Object.values(exchangeCoins).map(currency => currency.name)
 
-    console.log(listExchangeCoins)
-    const handlePrimary = (e) => {        
+    const handlePrimary = (e) => {
         dispatch(chosenPrimaryAction(e.target.value))
     }
 
@@ -41,9 +39,9 @@ function CurrencyConverter() {
         dispatch(amountQuantityAction(e.target.value))
     }
 
-    const shortPrimary = Object.keys(exchangeCoins).filter(currency=>exchangeCoins[currency].name===chosenPrimary);
-    const shortSecondary = Object.keys(exchangeCoins).filter(currency=>exchangeCoins[currency].name===chosenSecondary);
-    
+    const shortPrimary = Object.keys(exchangeCoins).filter(currency => exchangeCoins[currency].name === chosenPrimary);
+    const shortSecondary = Object.keys(exchangeCoins).filter(currency => exchangeCoins[currency].name === chosenSecondary);
+
     const convert = () => {
         const btc_select = coinsList.filter(coin => coin.name === 'Bitcoin')
         const btc_price = btc_select[0].current_price
@@ -59,63 +57,61 @@ function CurrencyConverter() {
 
     return (
         <div className='currency-converter font-semibold rounded-lg'>
-              <div className='m-6' > Exchange Coins</div>
-              <table className='table-auto mx-3'>
-
-                <tbody>
-                    <div>
-                    
-                        <div className='text-xs text-center h-10'>Enter Value:</div>
-                    </div>
-                    <div className='flex' >
-                        <div className= 'flex-none text-orange-400 p-4  w-20'>Sell</div>
-                        <div className='flex-initial'>
-                        <select name='option-1' className='coin-options m-3 h-8 w-20 rounded-lg bg-slate-200'
-                            value={chosenPrimary}
-                            // set the primary value of select input
-                            onChange={handlePrimary}>
-                            {
-                            listExchangeCoins.map((crypto, _index) => (
-                                <option key={_index}>
-                                    {crypto}</option>
-                            ))
-                        } </select>
-                        </div>
+            <div className='m-6'>
+                Exchange Coins</div>
 
 
-                        <div  className='flex-initial p-3'>
-                        <input type='number'  onChange={handleAmount} className='primary-amount rounded-lg border h-8 px-4'placeholder='Avl:'></input>
-                        </div>
-                    </div>
+            <div className='text-xs text-center h-10'>Enter Value:</div>
+            <div className='flex'>
+                <div className='flex-none text-orange-400 p-4  w-20'>Sell</div>
+                <div className='flex-initial'>
+                    <select name='option-1' className='coin-options m-3 h-8 w-20 rounded-lg bg-slate-200'
+                        value={chosenPrimary}
+                        // set the primary value of select input
+                        onChange={handlePrimary}>
+                        {
+                        listExchangeCoins.map((crypto, _index) => (
+                            <option key={_index}>
+                                {crypto}</option>
+                        ))
+                    } </select>
+                </div>
 
 
-                    <div className='flex' >
-                        <div className='flex-initial text-green-600 p-4  w-20'>Buy</div>
-                       <div>
-                       <select name='option-2' className='coin-options m-3 h-8 w-20 rounded-lg bg-slate-200'
-                            value={chosenSecondary}
-                            onChange={handleSecondary}>
-                            {
-                            listExchangeCoins.map((crypto, _index) => (
-                                <option key={_index}>
-                                    {crypto}</option>
-                            ))
-                        } </select>
-                       </div>
-                        <div className='flex-initial' >
-                        <input type='number'
-                            value={result}
-                            disabled={true}
-                            className='primary-amount m-3 max-w-sm rounded-lg border h-8 px-4 '></input>
-                        </div>
-                    </div>
-                </tbody>
-              </table>
-               <div className='text-center' >
-                  <button id='convert-button'
+                <div className='flex-initial p-3'>
+                    <input type='number'
+                        onChange={handleAmount}
+                        className='primary-amount rounded-lg border h-8 px-4'
+                        placeholder='Avl:'></input>
+                </div>
+            </div>
+
+
+            <div className='flex'>
+                <div className='flex-initial text-green-600 p-4  w-20'>Buy</div>
+                <div>
+                    <select name='option-2' className='coin-options m-3 h-8 w-20 rounded-lg bg-slate-200'
+                        value={chosenSecondary}
+                        onChange={handleSecondary}>
+                        {
+                        listExchangeCoins.map((crypto, _index) => (
+                            <option key={_index}>
+                                {crypto}</option>
+                        ))
+                    } </select>
+                </div>
+                <div className='flex-initial'>
+                    <input type='number'
+                        value={result}
+                        disabled={true}
+                        className='primary-amount m-3 max-w-sm rounded-lg border h-8 px-4 '></input>
+                </div>
+            </div>
+            <div className='text-center'>
+                <button id='convert-button'
                     onClick={convert}
                     className='px-2 h-8  bg-blue-500 rounded-lg  hover:bg-blue-600'>Exchange</button>
-                </div>
+            </div>
         </div>
     )
 }

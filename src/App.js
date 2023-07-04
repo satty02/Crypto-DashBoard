@@ -7,41 +7,35 @@ import ExchangeAPI from "./Components/Exchange/ExchangeAPI";
 
 
 function App() {
-  return (
-    <div className="main-container flex mx-3 bg-slate-300 antialiased w-100">
-      
-        <div className="m-3">
-            <div className="flex ...">
-                 <div className="Top Currency Selector flex-none mx-3 w-24 h-10 ...">
-                  <BaseCurrency/>
-                  </div> 
-                  <div className="Search Bar grow h-10 ...">
-                    <Search/>
-                  </div>
+    return (
+        <div className="main-containe bg-slate-300 antialiased flex">
+            <div className="flex-row flex-1">
+                <div className="flex ml-5 mt-5" >
+                    <div>
+                        <BaseCurrency/>
+                    </div>
+                    <div className="flex-1 mr-2">
+                        <Search/>
+                    </div>
+                </div>
+                <div className="bg-white m-5 rounded-lg"> <ChartDataAPI/></div>
+                <div className="flex">
+                    <div className=" w-96 ... ml-5 rounded-lg bg-white">
+                        <PieChart/>
+                    </div>
+                    <div className=" mx-5 rounded-lg bg-white ml-auto">
+                        <ExchangeAPI/>
+                    </div>
+                </div>
             </div>
-            <div className="Barchart" >
-              <div className="m-3 bg-slate-300 ">
-                  <ChartDataAPI/>
-              </div>
+
+            <div className="rounded-lg bg-white w-fit ml-auto mr-5 mt-5">
+                <CoinListAPI/>
             </div>
-            
-        
-        <div className="flex  antialiased" >
-            <div className="Piechart flex-none border  w-96 ... mx-3 rounded-md bg-white">
-              <PieChart/>
-            </div>
-            <div className="flex-initial grow border mx-3 rounded-md bg-white" >
-               <ExchangeAPI/>
-            </div>
-           </div>
         </div>
-        <div className="flex-wrap border my-3 mr-6 rounded-md bg-white  ">
-            <CoinListAPI/>
-        </div>
-      </div>
-  
-         
-  );
+
+
+    );
 }
 
 export default App;

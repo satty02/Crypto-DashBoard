@@ -10,7 +10,7 @@ function Coin({image,name,symbol,price,volume,change}) {
 
   return (
     // container for list of coins
-    <div className='mx-auto  w-full max-w-fit bg-white font-sans'>
+    <div className='mx-0 flex w-full max-w-fit bg-white font-sans'>
         <div className='align-middle'>
           {/* NAME , IMAGE,  & SYMBOL IN THIS CONTAINER */}
             <div className='sm:pl-4 pr-4 flex sm:items-left'>
@@ -26,11 +26,11 @@ function Coin({image,name,symbol,price,volume,change}) {
                      {/* PRICE & VOLUME IN THIS CONTAINER */}
 
                              
-                <div className='coin-price px-5 text-inherit text-sm flex'>
+                <div className='coin-price mr-0 pl-[6rem] items-center  content-end text-inherit text-sm flex'>
 
                   <div className='pt-5 p-3'>{change<0?bottom:top}</div>
 
-                   <div className='px-1 p-3'>{change.toFixed(2)}%</div> 
+                   <div className='px-1 pt-2'>{change.toFixed(2)}%</div> 
 
                    </div>              
 

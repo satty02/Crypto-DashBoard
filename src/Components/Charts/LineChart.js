@@ -50,7 +50,7 @@ const LineChart = () => {
       label: `${selectedCoins[index]}`,
       backgroundColor: randomColors[index],
       borderColor: randomColors[index],
-      data: data.map(price=>price[1]),
+      data: data.map(price=>`${price[1]}`),
       borderWidth:1,
     }))
 
