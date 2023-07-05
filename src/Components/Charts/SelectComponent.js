@@ -64,7 +64,7 @@ if(selectedChart==='Line Chart'){
 
 
   return ( 
-    <div className='flex flex-col main-container border rounded-lg space-x-3'>
+    <div className='flex flex-col main-container border rounded-lg'>
         <div className='flex mx-16 h-8 mt-4 space-x-2 mb-4'>
                         
             <input type='button' onClick={onClick1} name='1d' value='1' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>

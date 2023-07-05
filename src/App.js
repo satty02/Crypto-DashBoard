@@ -8,30 +8,33 @@ import ExchangeAPI from "./Components/Exchange/ExchangeAPI";
 
 function App() {
     return (
-        <div className="main-containe bg-slate-300 antialiased flex">
+        <div className="m-3 main-container bg-slate-300 antialiased flex flex-row max-w-fit ">
             <div className="flex-row max-w-fit">
                 <div className="flex ml-5 mt-5 " >
                     <div>
                         <BaseCurrency/>
                     </div>
-                    <div className=" mr-2">
+                    <div className="flex-grow mr-2">
                         <Search/>
                     </div>
                 </div>
-                <div className="bg-white m-5 rounded-lg"> <ChartDataAPI/></div>
-                <div className="flex">
+                    <div className=" flex-grow bg-white m-5 rounded-lg">
+                         <ChartDataAPI/>
+                    </div>
+                <div className="my-3 flex">
                     <div className=" w-96 ... ml-5 rounded-lg bg-white">
                         <PieChart/>
                     </div>
-                    <div className=" mx-5 rounded-lg bg-white ml-auto">
+                    <div className="mx-5 rounded-lg bg-white">
                         <ExchangeAPI/>
                     </div>
                 </div>
+                    
             </div>
 
-            <div className="rounded-lg bg-white w-fit ml-auto mr-5 mt-5">
-                <CoinListAPI/>
-            </div>
+                    <div className=" m-3 rounded-lg bg-white w-fit ">
+                         <CoinListAPI/>
+                   </div>
         </div>
 
 
