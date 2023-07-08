@@ -66,6 +66,7 @@ function CurrencyConverter() {
                 <div className='flex-none text-orange-400 p-4  w-20'>Sell</div>
                 <div className='flex-initial'>
                     <select name='option-1' className='coin-options m-3 h-8 w-20 rounded-lg bg-slate-200'
+                        data-testid = 'select1'
                         value={chosenPrimary}
                         // set the primary value of select input
                         onChange={handlePrimary}>
@@ -81,6 +82,7 @@ function CurrencyConverter() {
                 <div className='flex-initial p-3'>
                     <input type='number'
                         onChange={handleAmount}
+                        value={amount}
                         className='primary-amount rounded-lg border h-8 px-4'
                         placeholder='Avl:'></input>
                 </div>
@@ -92,6 +94,7 @@ function CurrencyConverter() {
                 <div>
                     <select name='option-2' className='coin-options m-3 h-8 w-20 rounded-lg bg-slate-200'
                         value={chosenSecondary}
+                        data-testid = 'select2'
                         onChange={handleSecondary}>
                         {
                         listExchangeCoins.map((crypto, _index) => (
@@ -104,6 +107,7 @@ function CurrencyConverter() {
                     <input type='number'
                         value={result}
                         disabled={true}
+                        placeholder='value'
                         className='primary-amount m-3 max-w-sm rounded-lg border h-8 px-4 '></input>
                 </div>
             </div>

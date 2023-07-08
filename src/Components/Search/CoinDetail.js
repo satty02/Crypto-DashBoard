@@ -8,7 +8,6 @@ function CoinDetail({image,name,id,symbol,current_price,market_cap}) {
   const coins = useSelector(state=>state.coinsData);
   const search = useSelector(state=>state.coinSearch);
 
-  console.log(coins)
   
   const Result = coins.filter(coin=>coin.name.toLowerCase()===search.toLowerCase())
 
@@ -25,7 +24,7 @@ function CoinDetail({image,name,id,symbol,current_price,market_cap}) {
       
       <div className='flex  w-fit mx-auto justify-center mt-12 h-screen '>
         <div className=' m-4'>
-          <h2 className='text-center text-xl font-bold text-blue-800'>{name} Value Statistics</h2>
+          <h2 className='text-center text-xl font-bold text-blue-800'>{Result.map(coin=>coin.name)} Value Statistics</h2>
           <p className='flex items-center font-medium bg-gray-200 py-4 px-6 rounded-lg my-2'>An overview showing the stat of <img src={Result.map(coin=>coin.image)} alt='img' className='object-contain h-5 w-5 mx-2'></img>{Result.map(coin=>coin.name)}</p>
           <p className='bg-gray-200 py-4 px-6 rounded-lg my-2 font-medium'>Price in {BaseCurrency.toLowerCase()==='inr'?'₹':BaseCurrency.toLowerCase()==='usd'?'$':BaseCurrency.toLowerCase()==='eur'?'€':BaseCurrency.toLowerCase()==='jpy'?"¥":'currency not selected'} : {Result.map(coin=>coin.current_price)}</p>
           <p className='bg-gray-200 py-4 px-6 rounded-lg my-2 font-medium'>Rank: {Result.map(coin=>coin.market_cap_rank)}</p>

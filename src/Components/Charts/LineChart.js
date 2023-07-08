@@ -11,24 +11,6 @@ const LineChart = () => {
     // selected coin is 
     const selectedCoins = useSelector(state=>state.coinSelect)
 
-    // const labels = ['jan','feb','march','april','may','june','july','aug','sep','oct','nov','dec']
-
-   
-    const options = {
-      scales: {
-        x: {
-          type: 'time',
-          time: {
-            parser: 'hh:mm:ss A', // Custom format for parsing the labels
-          },
-        },
-        y: {
-          beginAtZero: true,
-        },
-      },
-    };
-
-
     const generateRandomColor = () => {
       const letters = '0123456789ABCDEF';
       let color = '#';

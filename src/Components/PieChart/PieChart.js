@@ -51,7 +51,7 @@ function PieChart() {
     <div className='piechart max-w-fit'>
       <div className='flex pt-3'>
         <p className='pl-3'>Portfolio</p>
-        <div className=' flex pl-16'>Total value:{sumMktCap}</div>
+        <div className='flex pl-16'>Total value:{sumMktCap}</div>
       </div>
       
         <Pie data={data}

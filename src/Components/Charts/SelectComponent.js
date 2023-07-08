@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CoinDatesAction} from '../../State/Action';
 import { chartSelectionAction } from '../../State/Action';
@@ -7,8 +7,6 @@ import BarChart from "./BarChart";
 import DropdownMultiSelect from './DropdownMultiSelect';
 
 function SelectComponent() {
-    const [date , setDate] = useState('')
-
 
         // importing the states 
     const selectedChart = useSelector(state =>state.chartSelect)
@@ -45,7 +43,7 @@ function SelectComponent() {
     const handlechange = (e)=>{
         
         const days = dateToDays(e.target.value);
-        
+
         dispatch(CoinDatesAction(days))
 
     }
@@ -72,7 +70,7 @@ if(selectedChart==='Line Chart'){
             <input type='button' onClick={onClick1} name='1M' value='30' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
             <input type='button' onClick={onClick1} name='6M' value='180' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
             <input type='button' onClick={onClick1} name='1Y' value='365' className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-10 px-2 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
-            <input type='date' onChange={handlechange} name='date' value={date} className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-7  px-1 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
+            <input type='date' onChange={handlechange} data-testId='date' name='date' value={days} className='bg-white hover:bg-blue-100 text-gray-800 font-semibold h-7 w-7  px-1 m-1 border rounded-lg shadow  hover:border-sky-600'></input>
             
          <div> 
                 <DropdownMultiSelect/>          

@@ -24,6 +24,7 @@ function Search() {
     const handleEnter = (e) => {
         if (e.key === 'Enter') {
             if (Result.length > 0) {
+                console.log('yes')
                 e.preventDefault();
                 navigate(`/search?q=${search}`)
             } else {

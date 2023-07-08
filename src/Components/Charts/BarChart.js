@@ -1,13 +1,11 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { useSelector } from "react-redux";
-import  Chart  from "chart.js/auto";
-import moment from "moment";
 
 const BarChart = () => {
 
     const chartData = useSelector(state=>state.chartData);
- // selected coin is 
+    // selected coin is 
  const selectedCoins = useSelector(state=>state.coinSelect)
 
 
@@ -39,7 +37,7 @@ const BarChart = () => {
     datasets: chartMultiData,
   };
   return (
-    <div>
+    <div data-testid="bar-chart">
       <Bar data={data} />
     </div>
   );
