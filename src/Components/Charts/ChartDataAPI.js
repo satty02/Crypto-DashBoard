@@ -1,3 +1,5 @@
+// this component is used to fetch chart data from coinGeko api.
+
 import React ,{useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { chartDataAction } from '../../State/Action/chartDataAction'

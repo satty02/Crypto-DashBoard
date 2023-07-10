@@ -1,3 +1,5 @@
+// this component renders the Bar chart from chart.js
+
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { useSelector } from "react-redux";

@@ -74,7 +74,7 @@ function PieChart() {
     <div className='piechart'>
       <div className='flex pt-3 border-b-2'>
         <p className='pl-2 font-bold text-lg'>Portfolio</p>
-        <div className=' pl-16 text-gray-400' data-testid='value'> Total value: <b className=' ml-2 text-black'>{baseCurrency==='inr'?'₹':baseCurrency==='usd'?'$':baseCurrency==='eur'?'€':baseCurrency==='jpy'?'¥':'No select currency'}{sumMktCap}</b></div>
+        <div className='pl-14 text-gray-400' data-testid='value'> Total value: <b className=' ml-2 text-black'>{baseCurrency==='inr'?'₹':baseCurrency==='usd'?'$':baseCurrency==='eur'?'€':baseCurrency==='jpy'?'¥':'No select currency'}{sumMktCap}</b></div>
       </div >
       <div data-testid='pie-chart' className="flex justify-center w-64 md:w-72 max-h-[13.5rem] md:h-56">
           <Pie data={data} options={options} />

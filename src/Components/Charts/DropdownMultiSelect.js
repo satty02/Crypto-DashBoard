@@ -1,15 +1,30 @@
-import {useState} from 'react';
+// this Component is used to select or search coin which is to display
+
+import {Component, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {coinSelectionAction} from '../../State/Action';
 
 const DropdownMultiSelect = () => {
     const selectedOptions = useSelector(state => state.coinSelect);
+    const [searchedCoin,setSearchedCoin] = useState(null)
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const dispatch = useDispatch()
 
-    const options = useSelector(state => state.coinsData);
+    let options = useSelector(state => state.coinsData);
+
+    const onSearch =(e)=>{
+        setSearchedCoin(e.target.value);
+    }
+
+    let filteredOption = Array.isArray(options)
+    ? options.filter((coin) => coin.id === searchedCoin)
+    : [];
+
+  if (filteredOption.length !== 0) {
+    options = filteredOption;
+  }
 
 
     const handleOptionChange = (option) => {
@@ -29,7 +44,7 @@ const DropdownMultiSelect = () => {
     return (
         <div className="relative">
             {/* button created  */}
-            <button type="button" className={`py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white flex items-center justify-between w-full ${selectedOptions.length!==0?'bg-blue-100':'hover:border-sky-600'} `}
+            <button type="button" className={`py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white flex items-center justify-between w-full ${selectedOptions.length!==0?'bg-blue-200':'hover:border-sky-600'} `}
                 onClick={
                     () => setDropdownOpen(!dropdownOpen)
             }>
@@ -51,6 +66,12 @@ const DropdownMultiSelect = () => {
             dropdownOpen && (
                 <div className="absolute mt-1 w-full bg-white rounded-md shadow-lg">
                     <ul className="py-1">
+                        <li><input className=' h-[1.7rem] w-full border-2 rounded-md '
+                                    placeholder='  Search'
+                                    value={searchedCoin}
+                                    onChange={onSearch}/>
+                                    
+                        </li>
                         {
                         options.map((option) => (
                             <li key={

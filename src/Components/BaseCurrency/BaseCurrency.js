@@ -1,3 +1,5 @@
+// this component is used to change te currency of the entire page
+
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { BaseCurrencyAction } from '../../State/Action/BaseCurrencyAction';

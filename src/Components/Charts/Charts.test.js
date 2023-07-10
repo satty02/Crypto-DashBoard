@@ -18,6 +18,7 @@ describe('DropdownMultiSelect', () => {
     useDispatch.mockReturnValue(jest.fn());
   });
 
+
   test('should render "Select options" when no options are selected', () => {
     useSelector.mockReturnValue([]);
     render(<DropdownMultiSelect />);
