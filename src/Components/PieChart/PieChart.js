@@ -7,6 +7,8 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 function PieChart() {
 
+    const baseCurrency = useSelector(state=>state.BaseCurrency)
+
     const coins = useSelector(state=>state.coinsData)
 
     const mkt_cap = coins.sort((a,b)=>b.market_cap - a.market_cap)
@@ -14,9 +16,30 @@ function PieChart() {
     const sumMktCap = mkt_cap.slice(0,3).reduce((result,item)=>result+item.market_cap,0);
 
     const options = {
-                
-      style:"width: 900px; height: 500px"
-     
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          align:'start',
+          labels: {
+            usePointStyle:true,
+            pointStyle:'dot',
+            boxWidth:30,
+            boxHeight:6,
+            font: {
+              size: 12,
+              weight: 'bold',
+            },
+          },
+          
+        },
+      },
+      layout: {
+        padding:{
+          right:-30,
+        }
+        
+      }
     };
 
     const data = {
@@ -48,14 +71,14 @@ function PieChart() {
 
 
   return (
-    <div className='piechart max-w-fit'>
-      <div className='flex pt-3'>
-        <p className='pl-3'>Portfolio</p>
-        <div className='flex pl-16'>Total value:{sumMktCap}</div>
+    <div className='piechart'>
+      <div className='flex pt-3 border-b-2'>
+        <p className='pl-2 font-bold text-lg'>Portfolio</p>
+        <div className=' pl-16 text-gray-400' data-testid='value'> Total value: <b className=' ml-2 text-black'>{baseCurrency==='inr'?'₹':baseCurrency==='usd'?'$':baseCurrency==='eur'?'€':baseCurrency==='jpy'?'¥':'No select currency'}{sumMktCap}</b></div>
+      </div >
+      <div data-testid='pie-chart' className="flex justify-center w-64 md:w-72 max-h-[13.5rem] md:h-56">
+          <Pie data={data} options={options} />
       </div>
-      
-        <Pie data={data}
-        options={options} />
     </div>
   )
 }

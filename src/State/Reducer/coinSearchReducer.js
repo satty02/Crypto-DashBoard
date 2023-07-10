@@ -1,6 +1,6 @@
 import { COIN_SEARCH } from "../Action/actionTypes";
 
-const INIT_STATE = 'bitcoin'
+const INIT_STATE = ''
 
 export const coinSearchReducer = (state = INIT_STATE,action)=>{
     switch(action.type){

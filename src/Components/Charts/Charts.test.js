@@ -23,7 +23,7 @@ describe('DropdownMultiSelect', () => {
     render(<DropdownMultiSelect />);
     
     const button = screen.getByRole('button');
-    expect(button).toHaveTextContent('Select options');
+    expect(button).toHaveTextContent('Select Coins');
   });
 
   test('should render selected options when options are selected', () => {
@@ -59,7 +59,7 @@ describe('SelectComponent', () => {
 
     render(<SelectComponent />);
 
-    const button = screen.getByRole('button', { name:"1" });
+    const button = screen.getByRole('button', { name:"1D" });
     fireEvent.click(button);
 
     expect(dispatchMock).toHaveBeenCalledTimes(1);

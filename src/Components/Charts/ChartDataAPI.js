@@ -41,7 +41,7 @@ function ChartDataAPI() {
    
     useEffect(()=>{
         getData();
-    },[selectedCoins,days])
+    },[selectedCoins,days,baseCurrency])
 
 
   return (

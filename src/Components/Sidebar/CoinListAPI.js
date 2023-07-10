@@ -37,7 +37,7 @@ function CoinListAPI() {
     // using useEffect Hooks to prevent 
     // getData() functing to call frequently for same rendering
     useEffect(()=>{
-        getData();
+        getData()
     },[baseCurrency])
 
   return (

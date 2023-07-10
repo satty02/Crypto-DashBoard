@@ -1,6 +1,6 @@
 import { RESULT_AMOUNT } from "../Action/actionTypes";
 
-const INIT_STATE = 'btc'
+const INIT_STATE = ''
 
 export const resultAmountReducer = (state=INIT_STATE,action) =>{
     switch(action.type){

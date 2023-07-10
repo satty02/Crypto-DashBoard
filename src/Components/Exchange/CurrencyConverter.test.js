@@ -15,7 +15,7 @@ describe('CurrencyConverter', () => {
             primaryCoin: 'Bitcoin',
             secondaryCoin: 'Ethereum',
             amountQuantity: 10,
-            resultAmount: 5,
+            resultAmount: '5',
             coinsData: [
                 {
                     name: 'Bitcoin',
@@ -55,7 +55,7 @@ describe('CurrencyConverter', () => {
         expect(screen.getByTestId('select1')).toHaveValue('Bitcoin');
         expect(screen.getByTestId('select2')).toHaveValue('Ethereum');
         expect(screen.getByPlaceholderText('Avl:')).toHaveValue(10);
-        expect(screen.getByPlaceholderText('value')).toHaveValue(5);
+        expect(screen.getByPlaceholderText('value')).toHaveValue('5');
     });
 
     test('handles currency conversion on button click', () => {
@@ -85,7 +85,7 @@ describe('CurrencyConverter', () => {
         fireEvent.click(screen.getByText('Exchange'));
 
         const resultInput = screen.getByPlaceholderText('value');
-        expect(resultInput).toHaveValue(5)
+        expect(resultInput).toHaveValue('5')
 
     });
 });

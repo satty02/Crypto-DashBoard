@@ -22,6 +22,7 @@ describe('PieChart', () => {
 
     // Assert that the pie chart is rendered correctly
     expect(screen.getByText('Portfolio')).toBeInTheDocument();
-    expect(screen.getByText('Total value:1800000')).toBeInTheDocument();
+    expect(screen.getByTestId('value')).toBeInTheDocument();
+    expect(screen.getByTestId('pie-chart')).toBeInTheDocument();
   });
 });

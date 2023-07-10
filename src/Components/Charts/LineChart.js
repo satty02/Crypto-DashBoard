@@ -6,6 +6,8 @@ import moment from "moment/moment";
 
 const LineChart = () => {
 
+    const baseCurrency = useSelector(state=>state.BaseCurrency)
+
     const chartData = useSelector(state=>state.chartData);
 
     // selected coin is 
@@ -32,7 +34,7 @@ const LineChart = () => {
       label: `${selectedCoins[index]}`,
       backgroundColor: randomColors[index],
       borderColor: randomColors[index],
-      data: data.map(price=>`${price[1]}`),
+      data: data.map(price=>`${parseInt(price[1])/1000000000}`),
       borderWidth:1,
     }))
 
@@ -44,9 +46,23 @@ const LineChart = () => {
     ,
     };
 
+    const options = {
+      responsive: true, 
+      maintainAspectRatio: false, 
+      scales: {
+        y: {
+          position:"top",
+          title: {
+            display: true,
+            text: `Mkt. Cap in Billion ${baseCurrency==='inr'?'₹':baseCurrency==='usd'?'$':baseCurrency==='eur'?'€':baseCurrency==='jpy'?'¥':'No select currency'}`,
+          },
+      },
+    }
+  };
+
   return (
-    <div>
-      <Line  data={data}/>
+    <div className="w-full h-[18rem]">
+      <Line  data={data} options={options}/>
     </div>
   );
 };

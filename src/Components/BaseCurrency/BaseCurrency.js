@@ -27,10 +27,10 @@ function BaseCurrency() {
                             p-2.5
                             " 
                             >
-          <option value="inr" data-testId='select-option' className='font-semibold'>INR</option>
-          <option value="usd" data-testId='select-option' className='font-semibold'>USD</option>
-          <option value="eur" data-testId='select-option' className='font-semibold'>EURO</option>
-          <option value="jpy" data-testId='select-option' className='font-semibold'>YEN</option>
+          <option value="inr" data-testid='select-option' className='font-semibold'>INR</option>
+          <option value="usd" data-testid='select-option' className='font-semibold'>USD</option>
+          <option value="eur" data-testid='select-option' className='font-semibold'>EURO</option>
+          <option value="jpy" data-testid='select-option' className='font-semibold'>YEN</option>
         </select>
     </div>
   )

@@ -24,7 +24,6 @@ function Search() {
     const handleEnter = (e) => {
         if (e.key === 'Enter') {
             if (Result.length > 0) {
-                console.log('yes')
                 e.preventDefault();
                 navigate(`/search?q=${search}`)
             } else {
@@ -36,7 +35,7 @@ function Search() {
     return (
         <div className='border-black'>
 
-            <div class=' mx-3 max-w-full'>
+            <div class=' ml-3  max-w-full'>
                 <div class="relative flex items-center w-full h-10 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
                     <div class="grid place-items-center h-full w-12 text-gray-300">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -46,8 +45,8 @@ function Search() {
 
                     <input className="placeholder-gray-500 rounded-full px-3 pl-8 py-1 outline-none transition duration-700 ease-in-out focus:shadow-outline w-[30rem]" type="text" id="search"
                         onChange={onChange}
-                        value={search}
                         placeholder="Search"
+                        value={search}
                         onKeyPress={handleEnter}/>
 
                 </div>

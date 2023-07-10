@@ -26,7 +26,7 @@ function Coin({image,name,volume,change}) {
                      {/* PRICE & VOLUME IN THIS CONTAINER */}
 
                              
-                <div className='coin-price mr-0 pl-[6rem] items-center  content-end text-inherit text-sm flex'>
+                <div className='coin-price mr-0 pl-[5rem] items-center  content-end text-inherit text-sm flex'>
 
                   <div className='pt-5 p-3'>{change<0?bottom:top}</div>
 
