@@ -1,3 +1,5 @@
+// this component takes the search input & renders it.
+
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {coinSearchAction} from '../../State/Action';

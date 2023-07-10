@@ -1,3 +1,5 @@
+// this component renders the all the coins from coin components using lists.
+
 import React from 'react';
 import Coin from './Coin';
 import {useSelector} from 'react-redux';

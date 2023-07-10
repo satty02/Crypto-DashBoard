@@ -1,3 +1,5 @@
+// this component renders the pie-chart from chart.js
+
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';

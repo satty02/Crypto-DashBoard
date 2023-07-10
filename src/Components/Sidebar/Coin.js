@@ -1,3 +1,5 @@
+// this component is renders the coin details in a container
+
 import React from 'react'
 import { useSelector } from 'react-redux'
 

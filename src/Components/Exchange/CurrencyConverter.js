@@ -1,4 +1,4 @@
-
+// this component select necessary coins and provide the exchange result 
 
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';

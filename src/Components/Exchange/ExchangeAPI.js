@@ -1,4 +1,4 @@
-// this 
+// this component fetches latest exchange rates from goinGeko.
 
 import React, { useEffect } from 'react'
 import {useDispatch} from 'react-redux'

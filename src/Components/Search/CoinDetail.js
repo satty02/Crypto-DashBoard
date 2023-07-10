@@ -1,3 +1,5 @@
+// this renders the details of searched coins through routing.
+
 import React from 'react'
 import { useSelector } from 'react-redux'
 

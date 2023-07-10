@@ -1,3 +1,5 @@
+// this component is used to fetch coins list from coinGeko.
+
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { coinsListActions } from '../../State/Action';
