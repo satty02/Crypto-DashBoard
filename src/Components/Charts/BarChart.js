@@ -3,8 +3,11 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { useSelector } from "react-redux";
+import moment from "moment";
 
 const BarChart = () => {
+
+  const days = useSelector(state=>state.coinsDate)
 
   const baseCurrency = useSelector(state=>state.BaseCurrency)
 
@@ -25,9 +28,29 @@ const BarChart = () => {
   };
   
   const randomColors = Array.from({ length: chartData.length }).map(() => generateRandomColor());
-  
-  const labels = ['Jan' , 'Feb' , 'Mar' , 'Apr', 'May', 'Jun' , 'Jul' ,'Aug', 'Sep', 'Oct', 'Nov','Dec']
-  
+    
+  const timestamps = chartData.map(time=>time.map(ts=>ts[0]))[0]
+  let uniqueLabels = Array.isArray(timestamps)
+  ? Array.from(
+    new Set(
+      timestamps.map((timestamp) => {
+        if (days == 1) {
+          return moment(parseInt(timestamp)).format("HH:MM");
+        } else if (days <= 7) {
+          return moment(parseInt(timestamp)).format("DD");
+        } else if (days <= 30) {
+          return moment(parseInt(timestamp)).format("DD");
+        } else if (days <= 180) {
+          return moment(parseInt(timestamp)).format("MMM");
+        } else {
+          return moment(parseInt(timestamp)).format("MMM");
+        }
+      })
+    )
+  ):[];
+
+  const labels = uniqueLabels;
+
 
   const chartMultiData = chartData.map((data,index)=>({
     label: `${selectedCoins[index]}`,
@@ -45,6 +68,14 @@ const BarChart = () => {
     responsive: true, 
     maintainAspectRatio: false, 
     scales: {
+      x: {
+        ticks: {
+          maxTicksLimit: 10,
+          autoSkip: true,
+          maxRotation: 0,
+          autoSkipPadding:5 ,
+        },
+      },
       y: {
         position:'top',
         title: {
