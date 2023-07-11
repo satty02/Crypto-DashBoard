@@ -1,14 +1,14 @@
 // this Component is used to select or search coin which is to display
 
-import {Component, useState} from 'react';
+import {useEffect, useState,useRef} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {coinSelectionAction} from '../../State/Action';
 
 const DropdownMultiSelect = () => {
     const selectedOptions = useSelector(state => state.coinSelect);
     const [searchedCoin,setSearchedCoin] = useState(null)
-
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
 
     const dispatch = useDispatch()
 
@@ -41,15 +41,30 @@ const DropdownMultiSelect = () => {
         return updatedOptions
     };
 
+    // to hide list when click from anywhere
+
+    const handleClickOutside = (evt)=>{
+        if(dropdownRef.current && !dropdownRef.current.contains(evt.target)){
+            setDropdownOpen(false)
+        }
+    }
+
+    useEffect(()=>{
+        document.addEventListener('click',handleClickOutside);
+        return ()=>{
+            document.removeEventListener('click',handleClickOutside)
+        };
+    },[])
+
     return (
-        <div className="relative">
+        <div className="relative" ref={dropdownRef}>
             {/* button created  */}
-            <button type="button" className={`py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white flex items-center justify-between w-full ${selectedOptions.length!==0?'bg-blue-200':'hover:border-sky-600'} `}
+            <button type="button" className={`py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white flex items-center justify-between w-full ${selectedOptions.length!==0?'bg-blue-300':'hover:border-sky-600'} `}
                 onClick={
                     () => setDropdownOpen(!dropdownOpen)
             }>
                 <span> {
-                    selectedOptions.length === 0 ? 'Select Coins' : `${
+                    selectedOptions.length === 0 ? 'SELECT COINS' : `${
                         selectedOptions.join(', ')
                     } selected`
                 } </span>
@@ -64,7 +79,7 @@ const DropdownMultiSelect = () => {
 
             {
             dropdownOpen && (
-                <div className="absolute mt-1 w-full bg-white rounded-md shadow-lg">
+                <div className="absolute mt-1 w-full bg-white rounded-md shadow-lg overflow-y-auto max-h-[40vh]">
                     <ul className="py-1">
                         <li><input className=' h-[1.7rem] w-full border-2 rounded-md '
                                     placeholder='  Search'

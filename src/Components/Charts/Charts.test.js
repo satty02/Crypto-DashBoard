@@ -24,7 +24,7 @@ describe('DropdownMultiSelect', () => {
     render(<DropdownMultiSelect />);
     
     const button = screen.getByRole('button');
-    expect(button).toHaveTextContent('Select Coins');
+    expect(button).toHaveTextContent('SELECT COINS');
   });
 
   test('should render selected options when options are selected', () => {

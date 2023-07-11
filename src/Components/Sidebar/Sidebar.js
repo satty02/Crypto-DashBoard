@@ -10,12 +10,12 @@ function Sidebar() {
         const coins = useSelector((state) => state.coinsData)
 
 
-        return (<div className='main-sidebar overflow-y-auto max-h-[92.5vh] items-end justify-end content-end'>
+        return (<div className='main-sidebar overflow-y-auto max-h-[92.7vh] items-end justify-end content-end'>
 
             <div className='mx-10 my-6 font-medium'>
-                <h1>
-                    Cryptocurrency by<br/>
-                    market cap</h1>
+                <h1 className='font-semibold'>
+                    CRYPTOCURRENCY BY<br/>
+                    MARKET CAP</h1>
             </div>
             <ul className='flex flex-wrap'> {
                 coins.map((coin, index) =>< li className = 'border-b-2 bg-white' key = {
