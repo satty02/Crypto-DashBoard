@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/satty02/crypto-DashBoard.git/static/css/main.8500a153.css",
+    "main.js": "/satty02/crypto-DashBoard.git/static/js/main.6e2b5164.js",
+    "index.html": "/satty02/crypto-DashBoard.git/index.html",
+    "main.8500a153.css.map": "/satty02/crypto-DashBoard.git/static/css/main.8500a153.css.map",
+    "main.6e2b5164.js.map": "/satty02/crypto-DashBoard.git/static/js/main.6e2b5164.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8500a153.css",
+    "static/js/main.6e2b5164.js"
+  ]
+}
