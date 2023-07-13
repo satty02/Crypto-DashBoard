@@ -3,6 +3,7 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import { useSelector } from "react-redux";
+// eslint-disable-next-line 
 import  Chart  from "chart.js/auto";
 import moment from "moment/moment";
 
@@ -40,6 +41,7 @@ const LineChart = () => {
     ? Array.from(
       new Set(
         timestamps.map((timestamp) => {
+          // eslint-disable-next-line 
           if (days == 1) {
             return moment(parseInt(timestamp)).format("HH:MM:SS");
           } else if (days <= 7) {

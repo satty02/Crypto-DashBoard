@@ -43,6 +43,7 @@ function ChartDataAPI() {
    
     useEffect(()=>{
         getData();
+        // eslint-disable-next-line
     },[selectedCoins,days,baseCurrency])
 
 

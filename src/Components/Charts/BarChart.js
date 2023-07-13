@@ -34,6 +34,7 @@ const BarChart = () => {
   ? Array.from(
     new Set(
       timestamps.map((timestamp) => {
+        // eslint-disable-next-line 
         if (days == 1) {
           return moment(parseInt(timestamp)).format("HH:MM");
         } else if (days <= 7) {

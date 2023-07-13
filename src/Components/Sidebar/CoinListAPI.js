@@ -40,6 +40,7 @@ function CoinListAPI() {
     // getData() functing to call frequently for same rendering
     useEffect(()=>{
         getData()
+        // eslint-disable-next-line
     },[baseCurrency])
 
   return (

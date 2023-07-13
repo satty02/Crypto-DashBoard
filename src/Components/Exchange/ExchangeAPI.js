@@ -24,6 +24,7 @@ function ExchangeAPI() {
 
     useEffect(()=>{
          getData();
+         // eslint-disable-next-line 
     },[])
 
     return (

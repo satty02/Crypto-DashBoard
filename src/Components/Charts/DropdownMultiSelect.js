@@ -28,7 +28,7 @@ const DropdownMultiSelect = () => {
 
 
     const handleOptionChange = (option) => {
-        const updatedOptions = [... selectedOptions];
+        const updatedOptions = [...selectedOptions];
         const optionIndex = updatedOptions.indexOf(option);
 
         if (optionIndex > -1) {
