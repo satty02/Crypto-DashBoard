@@ -22,7 +22,7 @@ function Coin({image,name,volume,change}) {
                 
                 <div className='content-center px-3 m-1 align-middle'>
                   <h1 className='pr-5 text-sm px-3 antialiased text-gray-800'><b>{name}</b> </h1>
-                  <p className='coin-volume px-3  py-1 text-center text-xs  text-gray-500'>Mkt.Cap {baseCurrency==='inr'?'₹':baseCurrency==='usd'?'$':baseCurrency==='eur'?'€':baseCurrency==='jpy'?'¥':'No select currency'} {volume.toLocaleString()}</p>
+                  <p className='coin-volume px-3  py-1  xl: text-left 2xl:text-center text-xs  text-gray-500'>Mkt.Cap {baseCurrency==='inr'?'₹':baseCurrency==='usd'?'$':baseCurrency==='eur'?'€':baseCurrency==='jpy'?'¥':'No select currency'} {volume.toLocaleString()}</p>
                 </div>
                 
                      {/* PRICE & VOLUME IN THIS CONTAINER */}
