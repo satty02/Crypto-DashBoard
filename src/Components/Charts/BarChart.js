@@ -88,7 +88,7 @@ const BarChart = () => {
 };
 
   return (
-    <div data-testid="bar-chart" className="w-full  xl:h-[13rem] 2xl:h-[33rem]">
+    <div data-testid="bar-chart" className="w-full  xl:h-[13rem] 2xl:h-[32.5rem]">
       <Bar data={data} options={options}/>
     </div>
   );
