@@ -31,7 +31,7 @@ function App() {
                     </div>
                 </div>
             </div>
-            <div className="sm:ml-5 2xl:mx-6 my-5 rounded-lg bg-white sm:w-[39rem] md:w-[30rem] lg:w-[22.5rem] xl:w-[24.5rem] 2xl:w-[30.5rem] xl:h-[37.5rem]  2xl:h-[63rem] overflow-hidden">
+            <div className="xl:mr-5 sm:ml-5 2xl:mx-6 my-5 rounded-lg bg-white sm:w-[39rem] md:w-[30rem] lg:w-[22.5rem] xl:w-[23rem] 2xl:w-[30.5rem] xl:h-[37.5rem]  2xl:h-[63rem] overflow-hidden">
                 <CoinListAPI/>
             </div>
         </div>
