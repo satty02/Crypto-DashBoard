@@ -32,7 +32,7 @@ function CoinListAPI() {
         .then(data=>{
             // process the fetch data
             // dispatching into coins list created action
-            disptach(coinsListActions(data))
+            disptach(coinsListActions(data));
         })
     }
 
