@@ -19,19 +19,19 @@ function App() {
                         <Search/>
                     </div>
                 </div>
-                <div className="flex-grow sm:w-[39rem] md:w-[62rem] xl:w-[58rem] lg:w-[59rem] bg-white px-3 my-5 ml-5 mr-0 rounded-lg md:h-[23rem] ">
+                <div className="flex-grow sm:w-[39rem] sm:h-[27rem] md:w-[62rem] xl:w-[55.5rem] md:h-[22.5rem] lg:mr-3 lg:w-[56.5rem] bg-white px-3 my-5 ml-5 mr-0 rounded-lg md:h-[23rem] ">
                     <ChartDataAPI/>
                 </div>
                 <div className="md:flex ">
-                    <div className="md:w-[26rem] ... ml-5 pr-3 pl-5 rounded-lg bg-white md:h-[16.5rem] overflow-hidden sm:w-[39rem]">
+                    <div className="md:w-[26rem] ... ml-5 pr-3 pl-5 rounded-lg bg-white md:h-[17.5rem] overflow-hidden sm:w-[39rem] lg:w-[21.5rem]">
                         <PieChart/>
                     </div>
-                    <div className="md:px-[3rem] ml-6 pr-3  rounded-lg bg-white md:max-h-[16.5rem] sm:w-[39rem] lg:mr-5 lg:w-[31.5rem] xl:w-[32.5rem]">
+                    <div className="px-[3rem] ml-6 pr-3  rounded-lg bg-white md:max-h-[17.5rem] sm:w-[39rem]  lg:w-[33.5rem] xl:w-[32.5rem]">
                         <ExchangeAPI/>
                     </div>
                 </div>
             </div>
-            <div className=" mx-6 my-5 rounded-lg bg-white   overflow-hidden sm:w-[39rem] md:w-[30rem] lg:w-[40rem]">
+            <div className=" mx-6 my-5 rounded-lg bg-white    sm:w-[39rem] md:w-[30rem] lg:w-[22.5rem] xl:w-[23.5rem] h-[45rem]  overflow-hidden">
                 <CoinListAPI/>
             </div>
         </div>

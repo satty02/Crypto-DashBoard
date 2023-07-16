@@ -10,7 +10,7 @@ function Sidebar() {
         const coins = useSelector((state) => state.coinsData)
 
 
-        return (<div className='main-sidebar overflow-y-auto max-h-[92.7vh] items-end justify-end content-end'>
+        return (<div className='main-sidebar overflow-y-auto max-h-[109vh] items-end justify-end content-end'>
 
             <div className='mx-10 my-6 font-medium'>
                 <h1 className='font-semibold'>

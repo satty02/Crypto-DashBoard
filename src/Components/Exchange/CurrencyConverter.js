@@ -59,10 +59,10 @@ function CurrencyConverter() {
 
     return (
         <div className='currency-converter font-semibold rounded-lg w-[32rem]'>
-            <div className='mt-3 ml-3 mb-1 font-bold text-xl border-b-2'>Exchange Coins</div>
+            <div className='mt-3 2xl:ml-3 mb-1 font-bold text-xl border-b-2'>Exchange Coins</div>
             <div className='flex text-xs mt-3 text-end mr-[4rem] justify-end h-3'>Enter Value:</div>
             <div className='flex'>
-                <div className=' text-orange-400 py-4 px-7  w-20'>Sell</div>
+                <div className=' text-orange-400 py-4 2xl:px-7  w-20'>Sell</div>
                 <div className='flex-initial'>
                     <select name='option-1'
                             className='coin-options my-3 h-9  rounded-lg bg-slate-200' 
@@ -90,7 +90,7 @@ function CurrencyConverter() {
 
 
             <div className='flex'>
-                <div className=' text-green-600 py-4 px-7 w-20'>Buy</div>
+                <div className=' text-green-600 py-4 2xl:px-7 w-20'>Buy</div>
                 <div>
                     <select name='option-2' className='coin-options my-3 h-8   rounded-lg bg-slate-200'
                         value={chosenSecondary}
