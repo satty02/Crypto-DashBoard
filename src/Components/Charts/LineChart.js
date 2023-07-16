@@ -99,7 +99,7 @@ const LineChart = () => {
   };
 
   return (
-    <div className="w-full h-[18rem]">
+    <div className="w-full xl:h-[13rem] 2xl:h-[34] ">
       <Line  data={data} options={options}/>
     </div>
   );
