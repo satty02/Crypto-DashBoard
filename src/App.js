@@ -19,7 +19,7 @@ function App() {
                         <Search/>
                     </div>
                 </div>
-                <div className="flex-grow  sm:h-[27rem] md:h-[23rem] xl:h-[17.5rem] 2xl:h-[21rem] sm:w-[39rem] md:w-[62rem] lg:w-[56.5rem] xl:w-[55.5rem] 2xl:w-[62rem] lg:mr-3  bg-white px-3 sm:my-3 xl:my-2 2xl:my-5 2xl:mr-0 ml-5 mr-0 rounded-lg  ">
+                <div className="flex-grow  sm:h-[27rem] md:h-[23rem] xl:h-[17.5rem] 2xl:h-[21rem] sm:w-[39rem] md:w-[62rem] lg:w-[56.5rem] xl:w-[55.5rem] 2xl:w-[62rem] lg:mr-3  bg-white px-3 sm:my-5 xl:my-2 2xl:my-5 2xl:mr-0 ml-5 mr-0 rounded-lg  ">
                     <ChartDataAPI/>
                 </div>
                 <div className="md:flex ">
