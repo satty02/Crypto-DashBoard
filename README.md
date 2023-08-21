@@ -5,7 +5,9 @@ This project addresses the need for cryptocurrency information and conversion. I
 
 The project utilizes several dependencies, including React.js, react-redux, redux-thunk, Tailwind CSS, chart.js, react-chartjs-2, and the CoinGecko API. Additional dependencies are used to convert data from CoinGecko, such as timestamps. Mock stores are also employed for component testing. The search component utilizes useNavigate for routing.
 
-## Available Scripts
+## How to Run this application
+
+- clone this repository
 
 In the project directory, you can run:
 
