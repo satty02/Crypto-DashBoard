@@ -7,8 +7,8 @@ import ExchangeAPI from "./Components/Exchange/ExchangeAPI";
 
 
 function App() {
-    return (
 
+    return (
         <div className="md:mt-3 mx-3 my-2 main-container bg-slate-300 antialiased xl:flex  flex-row max-w-fit h-fit overflow-hidden">
             <div className="flex-row max-w-fit">
                 <div className="flex ml-5 mt-5">

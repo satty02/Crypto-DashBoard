@@ -1,6 +1,6 @@
 // this component is used to change te currency of the entire page
 
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { BaseCurrencyAction } from '../../State/Action/BaseCurrencyAction';
 
@@ -16,7 +16,9 @@ function BaseCurrency() {
     <div className=' w-24 h-10 font-semibold  z-10 hover::shadow-outline' >
               <select id="currency" data-testid='select' name='currency'
                 // dispatching the selected state into base currency action  
-                 onChange={(e)=>dispatch(BaseCurrencyAction(e.target.value))} 
+                 onChange={(e)=>{
+                  dispatch(BaseCurrencyAction(e.target.value))}} 
+
                  value={baseCurrency} 
                  className="currency-select
                             bg-white

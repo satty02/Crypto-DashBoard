@@ -19,6 +19,8 @@ function CoinListAPI() {
         const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${baseCurrency}&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`;
         
         // using fetch method to get the data from coingeko url;   
+
+
         fetch(url)
         .then(res=>{
             // methods for handling error
@@ -28,6 +30,7 @@ function CoinListAPI() {
 
             // if response is ok then parsing response into json
             return res.json();
+
         })
         .then(data=>{
             // process the fetch data

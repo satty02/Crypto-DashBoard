@@ -1,7 +1,7 @@
 import { CURRENCY_TYPE } from "./actionTypes";
 
 const BaseCurrencyAction = (type)=>{
-    return{
+    return {
         type: CURRENCY_TYPE,
         payload: type,
     }

@@ -6,9 +6,6 @@ import CoinDetail from "./Components/Search/CoinDetail";
 import App from "./App";
 
 function Routing(){
-    
-
-
     return(
         <Router>
               <Routes>
